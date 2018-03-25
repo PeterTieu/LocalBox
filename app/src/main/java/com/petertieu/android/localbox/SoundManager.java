@@ -1,8 +1,10 @@
 package com.petertieu.android.localbox;
 
 
-//SoundManager loads all the Sound ASSET files into the calling category fragment class
-    //i.e. NumbericsCategoryFragment, StatementsCategoryFragment, QuestionsCategoryFragment, AdjectivesCategoryFragment, NoundsCategoryFragment
+//SoundManager manages ALL the Sounds in the assets resource folder. It functions to:
+    //1: Load all the Sound ASSET files into the SoundPool
+    //2: FETCH and RELEASE Sounds to/from the RecyclerView
+    //3: PLAY a Sound from the SoundPool
 
 //In MODEL layer of the project
 
@@ -30,7 +32,7 @@ public class SoundManager {
     private int MAX_SOUNDS_PLAYED_TOGETHER = 5;
 
     //Parent directory name of the folder where the Sound asset files are saved in
-    private final String SOUNDS_FOLDER_NAME = "all_sounds";
+    private final String SOUNDS_FOLDER_NAME = "all_sounds/chinese";
 
     //List of all sounds within the parent directory
     List mSounds = new ArrayList<Sound>();
@@ -43,6 +45,9 @@ public class SoundManager {
 
     //============= Define methods ==========================================================
 
+
+    //======== 1: LOAD Sounds to the SoundPool ================================
+
     //Build constructor
     public SoundManager(Context context){
         mAssetManager = context.getAssets();
@@ -53,7 +58,6 @@ public class SoundManager {
         //Load all the sounds to the SoundPool
         loadSounds();
     }
-
 
 
 
@@ -105,7 +109,6 @@ public class SoundManager {
 
 
 
-
     //Helper method - sets the soundId of the
     private void load(Sound sound) throws IOException{
 
@@ -117,7 +120,47 @@ public class SoundManager {
 
         //Set the Sound ID to the Sound
         sound.setSoundId(soundId);
+    }
 
+
+
+
+
+    //======== 2: FETCH and RELEASE Sounds to/from the RecyclerView ================================
+
+    //Get Sound ArrayList - called by the Adapter in the RecyclerView (i.e. SoundAdapter in CategoryFragment.java)
+    public List<Sound> getSounds(){
+        return mSounds;
+    }
+
+
+
+    //Release all the Sounds from the SoundPool class  - called by CategoryFragment.onDestroy()
+    public void releaseSounds(){
+        mSoundPool.release();
+    }
+
+
+
+
+
+    //======== 3: PLAY a Sound from the SoundPool ================================
+
+    //Play the Sound - triggered by android:onClick by the VIEW (list_itemSound.xml),
+    // which is then called by the VIEW-MODEL (SoundViewModel) when the list-item is pressed
+    public void playSound(Sound sound){
+
+        //Get the Sound ID
+        Integer soundId = sound.getSoundId();
+
+        //If the Sound ID does NOT exist
+        if (soundId == null){
+            return;
+        }
+
+        //Play the Sound, based on the Sound ID.
+        // Let the right and left volumes be 100%, set priority to 1, loop 0 times, and have the rate at normal (1)
+        mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1);
     }
 
 }
