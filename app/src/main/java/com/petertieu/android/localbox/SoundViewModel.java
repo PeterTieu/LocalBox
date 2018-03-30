@@ -1,6 +1,14 @@
 package com.petertieu.android.localbox;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.databinding.BaseObservable;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.StateListDrawable;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
+import android.widget.TextView;
 
 
 //SoundViewModel is the VIEW-MODEL of the project.
@@ -14,11 +22,17 @@ import android.databinding.BaseObservable;
 public class SoundViewModel extends BaseObservable{
 
     //============= Declare instance variables ==============================================
+
+    private final String TAG = "SoundViewModel";
+
+
     private Sound mSound;
     private SoundManager mSoundManager;
 
 
     //============= Declare methods =========================================================
+
+
 
     //Build constructor
     public SoundViewModel(SoundManager soundManger){
@@ -39,16 +53,81 @@ public class SoundViewModel extends BaseObservable{
     }
 
 
+
+
+
+
+
     //Get the name of the Sound - called by "android:text="@{SoundViewModel.getSoundName}" in list_item_sound.xml
-    public String getSoundName(){
-        return mSound.getSoundName();
+    public String getSoundName() {
+
+
+        return mSound.getSoundNameEnglish();
+
     }
+
+
+
+
+
 
 
     //Set what happens when the list item is clicked - called by "android:onClick="@{(view) -> SoundViewModel.onButtonClicked()}" in list_item_sound.xml
     public void onButtonClicked(){
+
+
+
         //Play the sound
         mSoundManager.playSound(mSound);
+
+
+        
+        TextView englishText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.english_text);
+        englishText.setText(mSound.getSoundNameEnglish());
+
+
+
+
+        TextView languageText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.language_text);
+        languageText.setText(mSound.getSoundNameLanguage());
+
+
+        TextView pronounciationText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.pronounciation_text);
+        pronounciationText.setText(mSound.getSoundPronounciation());
+
+
+
+//        for (int i = 0; i<CategoryFragment.soundHolders.size()-1; i++){
+//            if (mSound.equals(CategoryFragment.soundHolders.get(i))){
+//                CategoryFragment.soundHolders.get(i).setTextToLanguage();
+//            }
+//        }
+
+
+    }
+
+
+
+
+
+
+
+    public StateListDrawable makeSelector(){
+        StateListDrawable res = new StateListDrawable();
+        res.setExitFadeDuration(300);
+        res.setAlpha(100);
+
+        if (CategoryFragment.mLanguageChosen.equals("chinese") && CategoryFragment.mCategoryChosen.equals("numerics")) {
+            res.addState(new int[]{android.R.attr.state_pressed}, new ColorDrawable(Color.RED));
+            res.addState(new int[]{}, new ColorDrawable(Color.YELLOW));
+        }
+        if (CategoryFragment.mLanguageChosen.equals("thai") && CategoryFragment.mCategoryChosen.equals("numerics")) {
+            res.addState(new int[]{android.R.attr.state_pressed}, new ColorDrawable(Color.BLUE));
+            res.addState(new int[]{}, new ColorDrawable(Color.RED));
+        }
+
+
+        return res;
     }
 
 }
