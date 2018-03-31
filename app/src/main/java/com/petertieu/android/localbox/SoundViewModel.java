@@ -35,8 +35,9 @@ public class SoundViewModel extends BaseObservable{
 
 
     //Build constructor
-    public SoundViewModel(SoundManager soundManger){
+    public SoundViewModel(SoundManager soundManger, Context context){
         mSoundManager = soundManger;
+        mContext = context;
     }
 
 
@@ -60,6 +61,7 @@ public class SoundViewModel extends BaseObservable{
 
     //Get the name of the Sound - called by "android:text="@{SoundViewModel.getSoundName}" in list_item_sound.xml
     public String getSoundName() {
+
 
 
         return mSound.getSoundNameEnglish();
@@ -104,10 +106,52 @@ public class SoundViewModel extends BaseObservable{
 //        }
 
 
+
+
+        //Account for the length of the English Text. Adjust the fond size of the English Text accordingly
+        if(englishText.length() >= 5 && englishText.length() < 10){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(40f);
+        }
+        else if (englishText.length() >= 10 && englishText.length() < 15){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(27f);
+        }
+        else if(englishText.length() >= 15 && englishText.length() < 20){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(25f);
+        }
+        else if(englishText.length() >= 20 && englishText.length() < 30){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(20f);
+        }
+        else if(englishText.length() >= 30){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(15f);
+        }
+        else{
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(50f);
+        }
+
+
+
+
+        if (languageText.length() >= 5 && languageText.length() < 10){
+            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(40f);
+        }
+        else if (languageText.length() >= 10 && languageText.length() < 15){
+            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(20f);
+        }
+        else if (languageText.length() >= 15){
+            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(15f);
+        }
+        else{
+            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(50f);
+        }
+
+
     }
 
 
 
+
+
+    public Context mContext;
 
 
 
@@ -118,13 +162,23 @@ public class SoundViewModel extends BaseObservable{
         res.setAlpha(100);
 
         if (CategoryFragment.mLanguageChosen.equals("chinese") && CategoryFragment.mCategoryChosen.equals("numerics")) {
-            res.addState(new int[]{android.R.attr.state_pressed}, new ColorDrawable(Color.RED));
-            res.addState(new int[]{}, new ColorDrawable(Color.YELLOW));
+            res.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.chinese_flag));
+//            res.addState(new int[]{}, new ColorDrawable(Color.YELLOW));
+            res.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble));
         }
+
         if (CategoryFragment.mLanguageChosen.equals("thai") && CategoryFragment.mCategoryChosen.equals("numerics")) {
-            res.addState(new int[]{android.R.attr.state_pressed}, new ColorDrawable(Color.BLUE));
-            res.addState(new int[]{}, new ColorDrawable(Color.RED));
+            res.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.thai_flag));
+//            res.addState(new int[]{}, new ColorDrawable(Color.RED));
+            res.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble));
         }
+
+
+
+
+
+
+
 
 
         return res;
