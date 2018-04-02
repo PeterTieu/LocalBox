@@ -100,6 +100,41 @@ public class CategoryFragment extends Fragment {
 
 
 
+            case("german"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/numerics";
+                        break;
+
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
+
 
             case("vietnamese"):
                 switch(mCategoryChosen){
@@ -136,6 +171,38 @@ public class CategoryFragment extends Fragment {
 
 
 
+
+            case("spanish"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/spanish/numerics";
+                        break;
+
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/spanish/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/spanish/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/spanish/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/spanish/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
 
 
 
