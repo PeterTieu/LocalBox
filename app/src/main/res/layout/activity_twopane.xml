@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Activity layout - for two pane (i.e when sw>600dp OR sw>600dp)-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!--1st Pane-->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="35">
+    </FrameLayout>
+
+    <!--2nd Pane-->
+    <FrameLayout
+        android:id="@+id/sounds_fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="65">
+    </FrameLayout>
+
+</LinearLayout>

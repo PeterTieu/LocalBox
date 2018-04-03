@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Reference layout - to refer to a TWO-fragment layout-->
+
+<resources>
+
+    <item
+        name="activity_masterdetail"
+        type="layout">
+
+        @layout/activity_twopane
+    </item>
+
+</resources>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<ScrollView-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+
+
+<!--android:layout_height="match_parent"-->
+<!--android:layout_width="match_parent"-->
+<!--android:orientation="vertical">-->
+
+
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:fillViewport="false">-->
+
+<!--<TableLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:stretchColumns="0">-->
+
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDarkBackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LanguageChooserActivity"
+    tools:showIn="@layout/fragment_language_chooser"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Select a Language"
+        android:textColor="@color/white"
+        android:textSize="25sp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/arabic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPaddingLeft="12dp"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/arabic_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/arabic"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/chinese"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/chinese_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/chinese"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/german"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/german_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/german"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/hindi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPaddingLeft="18dp"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/hindi_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/hindi"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/russian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/russian_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/russian"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/spanish"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/spanish_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/spanish"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/thai"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPaddingLeft="24dp"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/thai_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/thai"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/vietnamese"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            app:fb_borderColor="@color/colorPrimaryDark"
+            app:fb_borderWidth="1dp"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/colorPrimaryDark"
+            app:fb_iconPaddingLeft="-4dp"
+            app:fb_iconPosition="right"
+            app:fb_iconResource="@drawable/vietnamese_flag"
+            app:fb_radius="30dp"
+            app:fb_text="@string/vietnamese"
+            app:fb_textSize="12sp"
+            app:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+</LinearLayout>
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<resources>
+
+    <!--App Name-->
+    <string name="app_name">LocalBox</string>
+
+    <!--Language Chooser options-->
+    <string name="arabic">Arabic</string>
+    <string name="chinese">Chinese</string>
+    <string name="french">French</string>
+    <string name="german">German</string>
+    <string name="greek">Greek</string>
+    <string name="hindi">Hindi</string>
+    <string name="italian">Italian</string>
+    <string name="japanese">Japanese</string>
+    <string name="russian">Russian</string>
+    <string name="spanish">Spanish</string>
+    <string name="thai">Thai</string>
+    <string name="vietnamese">Vietnamese</string>
+
+
+    <!--Category Chooser options-->
+    <string name="choose_category">Choose the Category</string>
+    <string name="numerics">Numerics</string>
+    <string name="statements">Statements</string>
+    <string name="questions">Questions</string>
+    <string name="adjectives">Adjectives</string>
+    <string name="nouns">Nouns</string>
+
+
+    <!--Category options-->
+    <string name="category">Category</string>
+
+
+
+
+</resources>
