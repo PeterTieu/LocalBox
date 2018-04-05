@@ -99,6 +99,43 @@ public class CategoryFragment extends Fragment {
 
 
 
+            case ("hindi"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/hindi/numerics";
+                        break;
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/hindi/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/hindi/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/hindi/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/hindi/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
+
+
+
+
 
             case("german"):
                 switch(mCategoryChosen){
@@ -159,6 +196,41 @@ public class CategoryFragment extends Fragment {
 
                     case("nouns"):
                         SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/vietnamese/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
+
+            case("russian"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/russian/numerics";
+                        break;
+
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/russian/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/russian/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/russian/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/russian/nouns";
                         break;
 
                     default:
