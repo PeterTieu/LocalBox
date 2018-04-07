@@ -66,6 +66,40 @@ public class CategoryFragment extends Fragment {
         //TODO: Put all of the below in a method!
         switch (mLanguageChosen){
 
+
+
+            case ("arabic"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/arabic/numerics";
+                        break;
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/arabic/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/arabic/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/arabic/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/arabic/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
             case ("chinese"):
                 switch(mCategoryChosen){
 
