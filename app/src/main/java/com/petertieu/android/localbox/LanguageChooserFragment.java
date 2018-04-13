@@ -20,7 +20,7 @@ public class LanguageChooserFragment extends Fragment{
 
     FancyButton mArabicButton;
     FancyButton mChineseButton;
-    FancyButton mFrench;
+    FancyButton mFrenchButton;
     FancyButton mGermanButton;
     FancyButton mGreek;
     FancyButton mHindiButton;
@@ -89,9 +89,13 @@ public class LanguageChooserFragment extends Fragment{
 
         mChineseButton = view.findViewById(R.id.chinese);
 
+        mFrenchButton = view.findViewById(R.id.french);
+
         mGermanButton = view.findViewById(R.id.german);
 
         mHindiButton = view.findViewById(R.id.hindi);
+
+        mItalian = view.findViewById(R.id.italian);
 
         mRussianButton = view.findViewById(R.id.russian);
 
@@ -136,6 +140,19 @@ public class LanguageChooserFragment extends Fragment{
 
 
 
+
+        mFrenchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intraActivityIntent = CategoryChooserActivity.newIntent(getActivity(), "french");
+
+                startActivity(intraActivityIntent);
+            }
+        });
+
+
+
+
         mGermanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -157,6 +174,16 @@ public class LanguageChooserFragment extends Fragment{
 
                 startActivity(intraLanguageActivityIntent);
 
+            }
+        });
+
+
+        mItalian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intraLanguageActivityIntent = CategoryChooserActivity.newIntent(getActivity(), "italian");
+
+                startActivity(intraLanguageActivityIntent);
             }
         });
 
