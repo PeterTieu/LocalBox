@@ -189,6 +189,17 @@ public class LanguageChooserFragment extends Fragment{
 
 
 
+        mJapanese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intraLanguageActivityIntent = CategoryChooserActivity.newIntent(getActivity(), "japanese");
+
+                startActivity(intraLanguageActivityIntent);
+            }
+        });
+
+
+
 
         mRussianButton.setOnClickListener(new View.OnClickListener() {
             @Override
