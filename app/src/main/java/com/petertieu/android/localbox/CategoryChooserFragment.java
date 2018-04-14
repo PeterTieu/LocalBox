@@ -124,6 +124,10 @@ public class CategoryChooserFragment extends Fragment{
                 mFlag.setBackground(getResources().getDrawable(R.drawable.chinese_flag));
                 break;
 
+            case "french":
+                mFlag.setBackground(getResources().getDrawable(R.drawable.french_flag));
+                break;
+
             case "german":
                 mFlag.setBackground(getResources().getDrawable(R.drawable.german_flag));
                 break;
@@ -131,6 +135,17 @@ public class CategoryChooserFragment extends Fragment{
             case "hindi":
                 mFlag.setBackground(getResources().getDrawable(R.drawable.hindi_flag));
                 break;
+
+
+            case "italian":
+                mFlag.setBackground(getResources().getDrawable(R.drawable.italian_flag));
+                break;
+
+
+            case "japanese":
+                mFlag.setBackground(getResources().getDrawable(R.drawable.japanese_flag));
+                break;
+
 
             case "russian":
                 mFlag.setBackground(getResources().getDrawable(R.drawable.russian_flag));
