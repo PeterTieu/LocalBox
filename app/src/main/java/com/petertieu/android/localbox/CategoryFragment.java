@@ -133,6 +133,75 @@ public class CategoryFragment extends Fragment {
 
 
 
+            case("french"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/french/numerics";
+                        break;
+
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/french/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/french/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/french/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/french/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
+
+            case("german"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/numerics";
+                        break;
+
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
             case ("hindi"):
                 switch(mCategoryChosen){
 
@@ -169,31 +238,28 @@ public class CategoryFragment extends Fragment {
 
 
 
-
-
-            case("german"):
+            case ("italian"):
                 switch(mCategoryChosen){
 
                     case("numerics"):
-                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/numerics";
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/italian/numerics";
                         break;
 
-
                     case("statements"):
-                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/statements";
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/italian/statements";
                         break;
 
                     case("questions"):
-                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/questions";
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/italian/questions";
                         break;
 
 
                     case("adjectives"):
-                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/adjectives";
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/italian/adjectives";
                         break;
 
                     case("nouns"):
-                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/german/nouns";
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/italian/nouns";
                         break;
 
                     default:
@@ -202,6 +268,84 @@ public class CategoryFragment extends Fragment {
                 }
 
                 break;
+
+
+
+
+            case ("japanese"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/japanese/numerics";
+                        break;
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/japanese/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/japanese/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/japanese/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/japanese/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
+
+
+            case ("korean"):
+                switch(mCategoryChosen){
+
+                    case("numerics"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/korean/numerics";
+                        break;
+
+                    case("statements"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/korean/statements";
+                        break;
+
+                    case("questions"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/korean/questions";
+                        break;
+
+
+                    case("adjectives"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/korean/adjectives";
+                        break;
+
+                    case("nouns"):
+                        SoundManager.SOUNDS_FOLDER_NAME = "all_sounds/korean/nouns";
+                        break;
+
+                    default:
+                        SoundManager.SOUNDS_FOLDER_NAME = "";
+                        break;
+                }
+
+                break;
+
+
+
+
+
+
+
+
+
 
 
 
