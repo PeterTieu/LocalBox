@@ -146,6 +146,10 @@ public class CategoryChooserFragment extends Fragment{
                 mFlag.setBackground(getResources().getDrawable(R.drawable.japanese_flag));
                 break;
 
+            case "korean":
+                mFlag.setBackground(getResources().getDrawable(R.drawable.korean_flag));
+                break;
+
 
             case "russian":
                 mFlag.setBackground(getResources().getDrawable(R.drawable.russian_flag));
