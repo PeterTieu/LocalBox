@@ -22,10 +22,10 @@ public class LanguageChooserFragment extends Fragment{
     FancyButton mChineseButton;
     FancyButton mFrenchButton;
     FancyButton mGermanButton;
-    FancyButton mGreek;
     FancyButton mHindiButton;
     FancyButton mItalian;
     FancyButton mJapanese;
+    FancyButton mKorean;
     FancyButton mRussianButton;
     FancyButton mSpanishButton;
     FancyButton mThaiButton;
@@ -96,6 +96,10 @@ public class LanguageChooserFragment extends Fragment{
         mHindiButton = view.findViewById(R.id.hindi);
 
         mItalian = view.findViewById(R.id.italian);
+
+        mJapanese = view.findViewById(R.id.japanese);
+
+        mKorean = view.findViewById(R.id.korean);
 
         mRussianButton = view.findViewById(R.id.russian);
 
@@ -193,6 +197,16 @@ public class LanguageChooserFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 Intent intraLanguageActivityIntent = CategoryChooserActivity.newIntent(getActivity(), "japanese");
+
+                startActivity(intraLanguageActivityIntent);
+            }
+        });
+
+
+        mKorean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intraLanguageActivityIntent = CategoryChooserActivity.newIntent(getActivity(), "korean");
 
                 startActivity(intraLanguageActivityIntent);
             }
