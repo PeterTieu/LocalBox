@@ -7,6 +7,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
+
+
+    <data>
+        <variable
+            name="speedSeekBarViewModel"
+            type="com.petertieu.android.localbox.SpeedSeekBarViewModel"/>
+    </data>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,6 +73,44 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <!--Layout for Speed SeekBar-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.format(@string/playback_speed, speedSeekBarViewModel.getCurrentSpeedValue)}"/>
+
+            <TextView
+                android:id="@+id/speed_seek_bar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"/>
+        </LinearLayout>
+
+
+
+
+
+
+        <SeekBar
+            android:id="@+id/speed_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:progress="@{speedSeekBarViewModel.getCurrentSpeedPercentage}"
+            android:onProgressChanged="@{speedSeekBarViewModel.setSpeedValue}"/>
+
+
+
 
 
     </LinearLayout>
