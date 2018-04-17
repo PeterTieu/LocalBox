@@ -81,8 +81,24 @@ public class SpeedSeekBarViewModel extends BaseObservable{
 
 
 
-//        TextView speedDescription = CategoryFragment.fragmentLocalboxBinding.speedSeekBarText.getRootView().findViewById(R.id.speed_seek_bar_text);
-//        speedDescription.setText("Normal speed");
+        TextView speedDescription = CategoryFragment.fragmentLocalboxBinding.speedSeekBarText.getRootView().findViewById(R.id.speed_seek_bar_text);
+
+
+        if (currentSpeedValue == SoundManager.MIN_PLAYBACK_SPEED){
+            speedDescription.setText(R.string.slowest_speed);
+        }
+        else if (currentSpeedValue < 0.95 && currentSpeedValue > SoundManager.MIN_PLAYBACK_SPEED) {
+            speedDescription.setText(R.string.slow_speed);
+        }
+        else if (currentSpeedValue >= 0.95 && currentSpeedValue <= 1.05){
+            speedDescription.setText(R.string.normal_speed);
+        }
+        else if (currentSpeedValue > 1.05 && currentSpeedValue < SoundManager.MAX_PLAYBACK_SPEED){
+            speedDescription.setText(R.string.fast_speed);
+        }
+        else if (currentSpeedValue == SoundManager.MAX_PLAYBACK_SPEED){
+            speedDescription.setText(R.string.fastest_speed);
+        }
 
 
 
