@@ -32,13 +32,24 @@ public class SoundManager {
     private int MAX_SOUNDS_PLAYED_TOGETHER = 5;
 
     //Parent directory name of the folder where the Sound asset files are saved in
-    private final String SOUNDS_FOLDER_NAME = "all_sounds/chinese";
+    public static String SOUNDS_FOLDER_NAME = "all_sounds/thai/numerics";
 
     //List of all sounds within the parent directory
     List mSounds = new ArrayList<Sound>();
 
     //SoundPool for playing the Sound asset files
     SoundPool mSoundPool;
+
+
+
+
+
+    //SpeedSeekBar variables
+    public static final float MIN_PLAYBACK_SPEED = 0.7f;
+    public static final float MAX_PLAYBACK_SPEED = 1.4f;
+
+    private float mCurrentSpeedValue = 1;
+
 
 
 
@@ -160,8 +171,44 @@ public class SoundManager {
 
         //Play the Sound, based on the Sound ID.
         // Let the right and left volumes be 100%, set priority to 1, loop 0 times, and have the rate at normal (1)
-        mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1);
+        mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, mCurrentSpeedValue);
     }
+
+
+
+
+
+
+
+
+    //================================================== Speed SeekBar ===========================================================================
+
+
+    //======== 4: GET current Playback Speed of the Sound ================================
+    public float getCurrentSpeedValue(){
+        return mCurrentSpeedValue;
+    }
+
+
+
+
+    //======== 4: SET current Playback Speed of the Sound ================================
+    public void setCurrentSpeedValue(float currentSpeedValue){
+
+        if (currentSpeedValue > MAX_PLAYBACK_SPEED){
+            mCurrentSpeedValue = MAX_PLAYBACK_SPEED;
+        }
+        else if (currentSpeedValue < MIN_PLAYBACK_SPEED){
+            mCurrentSpeedValue = MIN_PLAYBACK_SPEED;
+        }
+        else{
+            mCurrentSpeedValue = currentSpeedValue;
+        }
+    }
+
+
+
+
 
 }
 
