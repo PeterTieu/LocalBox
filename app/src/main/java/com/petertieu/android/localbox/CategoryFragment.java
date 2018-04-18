@@ -2,7 +2,6 @@ package com.petertieu.android.localbox;
 
 
 import android.databinding.DataBindingUtil;
-import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -18,7 +17,6 @@ import com.petertieu.android.localbox.databinding.FragmentLocalBoxBinding;
 import com.petertieu.android.localbox.databinding.ListItemSoundBinding;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -535,6 +533,10 @@ public class CategoryFragment extends Fragment {
 
         fragmentLocalboxBinding.recyclerView.setAdapter(new SoundAdapter(mSoundManager.getSounds()));
 
+
+
+
+        fragmentLocalboxBinding.setSpeedSeekBarViewModel(new SpeedSeekBarViewModel(mSoundManager, fragmentLocalboxBinding.speedSeekBar));
 
 
 
