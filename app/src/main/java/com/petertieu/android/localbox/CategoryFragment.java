@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import com.petertieu.android.localbox.databinding.FragmentLocalBoxBinding;
@@ -528,10 +530,23 @@ public class CategoryFragment extends Fragment {
 
         fragmentLocalboxBinding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_local_box, viewGroup, false);
 
+
+
+        //REMOVE the CAPTIONS View so that ONLY the PRE-TAP View appear on the screen (NOTE: Only one of the PRE-TAP View or CAPTIONS View could appear on screen at a time!)
+        LinearLayout parentLinearLayout = (LinearLayout) fragmentLocalboxBinding.parentLinearLayout;
+        LinearLayout captionsLinearLayout = (LinearLayout) fragmentLocalboxBinding.postTapView;
+        parentLinearLayout.removeView(captionsLinearLayout);
+
+
+
+
+
+
         fragmentLocalboxBinding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
 
 
         fragmentLocalboxBinding.recyclerView.setAdapter(new SoundAdapter(mSoundManager.getSounds()));
+
 
 
 
