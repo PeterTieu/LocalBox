@@ -1,13 +1,9 @@
 package com.petertieu.android.localbox;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.databinding.BaseObservable;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.StateListDrawable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -83,7 +79,25 @@ public class SoundViewModel extends BaseObservable{
         mSoundManager.playSound(mSound);
 
 
-        
+        //REMOVE the PRE-TAP View on screen, and ADD the CAPTIONS View (NOTE: Only one of the PRE-TAP View or CAPTIONS View could appear on screen at a time!)
+        LinearLayout parentLinearLayout = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.parentLinearLayout;
+        LinearLayout preTapView = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.preTapView;
+        parentLinearLayout.removeView(preTapView);
+
+
+        LinearLayout captionsLinearLayout = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.postTapView;
+
+        //If the CAPTIONS View does not exist, then add it to the layout
+        if (CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.postTapView) == null) {
+            parentLinearLayout.addView(captionsLinearLayout, parentLinearLayout.getChildCount() - 3);
+        }
+
+
+
+
+
+
+
         TextView englishText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.english_text);
         englishText.setText(mSound.getSoundNameEnglish());
 
