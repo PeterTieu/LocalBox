@@ -4,10 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.petertieu.android.localbox.dialogfragment.AboutDialogFragment;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -32,6 +38,9 @@ public class LanguageChooserFragment extends Fragment{
     FancyButton mVietnameseButton;
 
 
+    private static final String IDENTIFIER_DIALOG_FRAGMENT_ABOUT = "DialogFragmentAbout";
+
+
     //============= Define methods ==========================================================
 
     //Override onAttach(..) fragment lifecycle callback method
@@ -49,6 +58,15 @@ public class LanguageChooserFragment extends Fragment{
         super.onCreate(onSaveInstanceState);
 
         Log.i(TAG, "onCreate(..) called");
+
+        //Report that this fragment would like to participate in populating menus
+        setHasOptionsMenu(true);
+
+        //Reset options menu
+        getActivity().invalidateOptionsMenu();
+
+
+
     }
 
 
@@ -71,6 +89,11 @@ public class LanguageChooserFragment extends Fragment{
 
         Log.i(TAG, "onResume() called");
     }
+
+
+
+
+
 
 
 
@@ -274,6 +297,57 @@ public class LanguageChooserFragment extends Fragment{
 
         return view;
     }
+
+
+
+
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater){
+        super.onCreateOptionsMenu(menu, menuInflater);
+
+        Log.i(TAG, "onCreateOptionsMenu(..) called");
+
+        menuInflater.inflate(R.menu.fragment_language_chooser, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        Log.i(TAG, "onOptionsItemSelected(..) called");
+
+
+        switch(menuItem.getItemId()){
+            case (R.id.about):
+
+                aboutDialog();
+
+                return true;
+
+
+        }
+
+
+        return super.onOptionsItemSelected(menuItem);
+    }
+
+
+    private void aboutDialog(){
+        FragmentManager fragmentManager = getFragmentManager();
+
+        AboutDialogFragment aboutDialogFragment = AboutDialogFragment.newInstance();
+
+        aboutDialogFragment.show(fragmentManager, IDENTIFIER_DIALOG_FRAGMENT_ABOUT);
+
+
+    }
+
+
+
+
+
+
 
 
     //Override onPause() fragment lifecycle callback method
