@@ -2,13 +2,19 @@ package com.petertieu.android.localbox;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.petertieu.android.localbox.dialogfragment.ArabicInfoDialogFragment;
+import com.petertieu.android.localbox.dialogfragment.ChineseInfoDialogFragment;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -34,6 +40,7 @@ public class CategoryChooserFragment extends Fragment{
     private FancyButton mNouns;
 
 
+    private static final String IDENTIFIER_DIALOG_FRAGMENT_ABOUT = "DialogFragmentAbout";
 
 
 
@@ -68,11 +75,11 @@ public class CategoryChooserFragment extends Fragment{
 
 
 
+        //Report that this fragment would like to participate in populating menus
+        setHasOptionsMenu(true);
 
-
-
-
-
+        //Reset options menu
+        getActivity().invalidateOptionsMenu();
 
 
     }
@@ -111,13 +118,14 @@ public class CategoryChooserFragment extends Fragment{
 
         View view = layoutInflater.inflate(R.layout.fragment_category_chooser, viewGroup, false);
 
-        mFlag = view.findViewById(R.id.flag);
+        mFlag = view.findViewById(R.id.flag_action_bar);
 
 
         switch (mLanguageChosen){
 
             case "arabic":
                 mFlag.setBackground(getResources().getDrawable(R.drawable.arabic_flag));
+
                 break;
 
             case "chinese":
@@ -249,6 +257,86 @@ public class CategoryChooserFragment extends Fragment{
 
         return view;
     }
+
+
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater){
+        super.onCreateOptionsMenu(menu, menuInflater);
+
+        Log.i(TAG, "onCreateOptionsMenu(..) called");
+
+        switch(mLanguageChosen){
+
+            case "arabic":
+                menuInflater.inflate(R.menu.arabic_info, menu);
+                break;
+
+
+
+            case "chinese":
+                menuInflater.inflate(R.menu.chinese_info, menu);
+                break;
+        }
+
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        Log.i(TAG, "onOptionsItemSelected(..) called");
+
+
+        switch(mLanguageChosen){
+
+            case "arabic":
+                switch(menuItem.getItemId()){
+                    case (R.id.arabic_info):
+
+                        arabicDialog();
+                        return true;
+                }
+                break;
+
+
+            case "chinese":
+                switch(menuItem.getItemId()){
+                    case (R.id.chinese_info):
+
+                        chineseDialog();
+                        return true;
+                }
+                break;
+
+
+        }
+
+
+
+        return super.onOptionsItemSelected(menuItem);
+    }
+
+
+
+
+    private void arabicDialog(){
+        FragmentManager fragmentManager = getFragmentManager();
+
+        ArabicInfoDialogFragment aboutDialogFragment = ArabicInfoDialogFragment.newInstance();
+
+        aboutDialogFragment.show(fragmentManager, IDENTIFIER_DIALOG_FRAGMENT_ABOUT);
+    }
+
+
+    private void chineseDialog(){
+        FragmentManager fragmentManager = getFragmentManager();
+
+        ChineseInfoDialogFragment aboutDialogFragment = ChineseInfoDialogFragment.newInstance();
+
+        aboutDialogFragment.show(fragmentManager, IDENTIFIER_DIALOG_FRAGMENT_ABOUT);
+    }
+
 
 
 
