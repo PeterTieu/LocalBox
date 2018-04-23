@@ -13,8 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.petertieu.android.localbox.dialogfragment.ArabicInfoDialogFragment;
-import com.petertieu.android.localbox.dialogfragment.ChineseInfoDialogFragment;
+import com.petertieu.android.localbox.dialogfragment.LanguageInfoDialogFragment;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -253,8 +252,6 @@ public class CategoryChooserFragment extends Fragment{
 
 
 
-
-
         return view;
     }
 
@@ -267,52 +264,21 @@ public class CategoryChooserFragment extends Fragment{
 
         Log.i(TAG, "onCreateOptionsMenu(..) called");
 
-        switch(mLanguageChosen){
-
-            case "arabic":
-                menuInflater.inflate(R.menu.arabic_info, menu);
-                break;
-
-
-
-            case "chinese":
-                menuInflater.inflate(R.menu.chinese_info, menu);
-                break;
-        }
-
+        menuInflater.inflate(R.menu.fragment_category_chooser, menu);
     }
+
+
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
         Log.i(TAG, "onOptionsItemSelected(..) called");
 
-
-        switch(mLanguageChosen){
-
-            case "arabic":
-                switch(menuItem.getItemId()){
-                    case (R.id.arabic_info):
-
-                        arabicDialog();
-                        return true;
-                }
+        switch(menuItem.getItemId()){
+            case (R.id.language_info_dialog):
+                languageInfoDialogFragment(mLanguageChosen);
                 break;
-
-
-            case "chinese":
-                switch(menuItem.getItemId()){
-                    case (R.id.chinese_info):
-
-                        chineseDialog();
-                        return true;
-                }
-                break;
-
-
         }
-
-
 
         return super.onOptionsItemSelected(menuItem);
     }
@@ -320,22 +286,15 @@ public class CategoryChooserFragment extends Fragment{
 
 
 
-    private void arabicDialog(){
+
+    private void languageInfoDialogFragment(String languageChosen){
         FragmentManager fragmentManager = getFragmentManager();
 
-        ArabicInfoDialogFragment aboutDialogFragment = ArabicInfoDialogFragment.newInstance();
+        LanguageInfoDialogFragment aboutDialogFragment = LanguageInfoDialogFragment.newInstance(languageChosen);
 
         aboutDialogFragment.show(fragmentManager, IDENTIFIER_DIALOG_FRAGMENT_ABOUT);
     }
 
-
-    private void chineseDialog(){
-        FragmentManager fragmentManager = getFragmentManager();
-
-        ChineseInfoDialogFragment aboutDialogFragment = ChineseInfoDialogFragment.newInstance();
-
-        aboutDialogFragment.show(fragmentManager, IDENTIFIER_DIALOG_FRAGMENT_ABOUT);
-    }
 
 
 
