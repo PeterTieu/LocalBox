@@ -9,4 +9,36 @@
 
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+
+    <!--English Text-->
+    <color name="ambient_yellow">#d1c448</color>
+
+
+    <!--Language Info Dialog-->
+    <color name="green_arabic_flag">#1D6B53</color>
+    <color name="yellow_chinese_flag">#F7EC14</color>
+    <color name="red_chinese_flag">#ED2124</color>
+    <color name="blue_french_flag">#002496</color>
+    <color name="yellow_german_flag">#FECE00</color>
+    <color name="orange_hindi_flag">#FF9933</color>
+    <color name="green_hindi_flag">#128807</color>
+    <color name="red_italian_flag">#CF2A38</color>
+    <color name="green_italian_flag">#009247</color>
+    <color name="red_japanese_flag">#BC002D</color>
+    <color name="blue_russian_flag">#0039A6</color>
+    <color name="yellow_spanish_flag">#FFC400</color>
+    <color name="red_spanish_flag">#C60B1E</color>
+    <color name="blue_thai_flag">#00237D</color>
+    <color name="red_thai_flag">#DE1116</color>
+    <color name="yellow_vietnamese_flag">#FDD116</color>
+    <color name="red_vietnamese_flag">#CE1127</color>
+
+
+
+
+
+
+
 </resources>
