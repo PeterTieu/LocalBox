@@ -32,5 +32,20 @@
 
 
 
+    <!--Speed Seek Bar-->
+    <string name="playback_speed">Playback Speed: %.1fx</string>
+    <string name="normal_speed">Normal Speed</string>
+    <string name="slowest_speed">Slowest Speed</string>
+    <string name="slow_speed">Slow Speed</string>
+    <string name="fast_speed">Fast Speed</string>
+    <string name="fastest_speed">Fastest Speed</string>
+
+
+
+    <!--Menu Items-->
+    <string name="about">About</string>
+
+
+
 
 </resources>
