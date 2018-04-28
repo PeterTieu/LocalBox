@@ -30,7 +30,7 @@
 
 
         <ImageView
-            android:id="@+id/flag"
+            android:id="@+id/flag_action_bar"
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"/>
@@ -69,7 +69,7 @@
             app:fb_borderWidth="1dp"
             app:fb_defaultColor="@color/colorPrimary"
             app:fb_focusColor="@color/colorPrimaryDark"
-            app:fb_fontIconResource="&#x21E8;"
+            app:fb_iconResource="@drawable/numerics_picture"
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/numerics"
@@ -100,7 +100,7 @@
             app:fb_borderWidth="1dp"
             app:fb_defaultColor="@color/colorPrimary"
             app:fb_focusColor="@color/colorPrimaryDark"
-            app:fb_fontIconResource="&#x21E8;"
+            app:fb_iconResource="@drawable/statements_picture"
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/statements"
@@ -131,7 +131,7 @@
             app:fb_borderWidth="1dp"
             app:fb_defaultColor="@color/colorPrimary"
             app:fb_focusColor="@color/colorPrimaryDark"
-            app:fb_fontIconResource="&#x21E8;"
+            app:fb_iconResource="@drawable/questions_picture"
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/questions"
@@ -165,7 +165,7 @@
             app:fb_borderWidth="1dp"
             app:fb_defaultColor="@color/colorPrimary"
             app:fb_focusColor="@color/colorPrimaryDark"
-            app:fb_fontIconResource="&#x21E8;"
+            app:fb_iconResource="@drawable/adjectives_picture"
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/adjectives"
@@ -201,7 +201,7 @@
             app:fb_borderWidth="1dp"
             app:fb_defaultColor="@color/colorPrimary"
             app:fb_focusColor="@color/colorPrimaryDark"
-            app:fb_fontIconResource="&#x21E8;"
+            app:fb_iconResource="@drawable/nouns_picture"
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/nouns"
