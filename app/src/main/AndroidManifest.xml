@@ -31,7 +31,6 @@
 
         <activity
             android:name=".CategoryActivity"
-            android:label="@string/category"
             android:parentActivityName=".CategoryChooserActivity"
             android:launchMode="singleInstance">
             <!--android:launchMode="singleInstance" is necessary.
