@@ -4,10 +4,14 @@ package com.petertieu.android.localbox;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,6 +21,7 @@ import android.widget.TextView;
 
 import com.petertieu.android.localbox.databinding.FragmentLocalBoxBinding;
 import com.petertieu.android.localbox.databinding.ListItemSoundBinding;
+import com.petertieu.android.localbox.dialogfragment.CategoryInfoDialogFragment;
 
 
 import java.util.List;
@@ -33,6 +38,8 @@ public class CategoryFragment extends Fragment {
 
 
     private SoundManager mSoundManager;
+
+    private final String IDENTIFIER_DIALOG_FRAGMENT_CATEGORY_INFO = "DialogFragmentCategoryInfo";
 
 
 
@@ -513,6 +520,9 @@ public class CategoryFragment extends Fragment {
 
 
 
+        setHasOptionsMenu(true);
+
+
         setRetainInstance(true);
 
     }
@@ -702,6 +712,43 @@ public class CategoryFragment extends Fragment {
 
 
 
+
+    }
+
+
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater){
+        super.onCreateOptionsMenu(menu, menuInflater);
+
+        Log.i(TAG, "onCreateOptionsMenu(..) called");
+
+        menuInflater.inflate(R.menu.fragment_category, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        Log.i(TAG, "onOptionsItemSelected(..) caleld");
+
+        switch (menuItem.getItemId()){
+            case (R.id.category_info_dialog):
+                categoryInfoDialogFragment(mCategoryChosen);
+                break;
+        }
+
+        return super.onOptionsItemSelected(menuItem);
+    }
+
+
+    private void categoryInfoDialogFragment(String categoryChosen){
+        FragmentManager fragmentManager = getFragmentManager();
+
+
+        CategoryInfoDialogFragment categoryInfoDialogFragment = new CategoryInfoDialogFragment.newInstance(categoryChosen);
+
+        categoryInfoDialogFragment.show(fragmentManager, IDENTIFIER_DIALOG_FRAGMENT_CATEGORY_INFO);
 
     }
 
