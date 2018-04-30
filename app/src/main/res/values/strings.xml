@@ -44,6 +44,8 @@
 
     <!--Menu Items-->
     <string name="about">About</string>
+    <string name="language_info">Language Info</string>
+    <string name="category_info">Category Info</string>
 
 
 
