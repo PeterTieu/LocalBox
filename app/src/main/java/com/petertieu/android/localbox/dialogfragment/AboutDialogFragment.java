@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import com.petertieu.android.localbox.R;
 
+import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
+import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+
 public class AboutDialogFragment extends DialogFragment{
 
 
@@ -64,7 +67,12 @@ public class AboutDialogFragment extends DialogFragment{
 
 
 
-        alertDialog.getWindow().setLayout(850,1150);
+        if (getActivity().getResources().getConfiguration().orientation == ORIENTATION_PORTRAIT){
+            alertDialog.getWindow().setLayout(900,1150);
+        }
+        else{
+            alertDialog.getWindow().setLayout(1450, 900);
+        }
 
 
         return alertDialog;
