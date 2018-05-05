@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.petertieu.android.localbox.R;
 
+import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+
 public class LanguageInfoDialogFragment extends DialogFragment{
 
 
@@ -373,7 +375,13 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
 
-        alertDialog.getWindow().setLayout(850,1200);
+        if (getActivity().getResources().getConfiguration().orientation == ORIENTATION_PORTRAIT){
+            alertDialog.getWindow().setLayout(850,1200);
+        }
+        else{
+            alertDialog.getWindow().setLayout(1350,900);
+        }
+
 
 
         return alertDialog;
