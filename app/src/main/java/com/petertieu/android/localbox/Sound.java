@@ -26,12 +26,13 @@ public class Sound {
     //Name of the Sound asset file (i.e. after the directory components have been stripped)
     private String mSoundName;
 
-    //Sound name - English translation
+    //Sound name - English translation (e.g. "How are you？")
     private String mSoundNameEnglish;
 
-    //Sound name - Native language translation
+    //Sound name - Language translation (e.g. "好吗？")
     private String mSoundNameLanguage;
 
+    //Sound name - Native language Pronunciation (e.g. "Nǐ hǎo ma？")
     private String mSoundPronounciation;
 
 
@@ -45,46 +46,43 @@ public class Sound {
         //Stash the filepath of the sound to the instance variable
         mSoundFilePath = soundFilePath;
 
-        //Obtain the components of the sound's filepath (e.g. "..app/java/assets/mi_nombre_es.mp3")
+        //Obtain the components of the sound's filepath (e.g. "..app/java/assets/01_How are you？_好吗？_Nǐ hǎo ma？.mp3")
         String[] componentsOfSoundFilePath = soundFilePath.split("/");
 
-        //Obtain the FILENAME of the sound (i.e. the last component of the sound filepath, e.g. "mi_nombre_es.mp3");
+        //Obtain the FILENAME of the sound (i.e. the last component of the sound filepath (e.g. "01_How are you？_好吗？_Nǐ hǎo ma？.mp3");
         String soundFilename = componentsOfSoundFilePath[componentsOfSoundFilePath.length - 1];
 
-        //Remove the ".mp3" component from the Sound filename
+        //Remove the ".mp3" component from the Sound filename (e.g. "01_How are you？_好吗？_Nǐ hǎo ma？")
         String soundFilenameWithoutFiletype = soundFilename.replace(".mp3", "");
 
-
+        //Split the components of the Sound filename by "_" and place them in the componentsOfSoundFilename String
         String[] componentsOfSoundFileName = soundFilenameWithoutFiletype.split("_");
 
+
+        //Obtain English translation of the Sound (e.g. "How are you?")
         mSoundNameEnglish = componentsOfSoundFileName[1];
 
+        //Obtain Language translation of the Sound (e.g. "好吗？")
         mSoundNameLanguage = componentsOfSoundFileName[2];
 
+        //Check if the Language Pronunciation of the Sound (e.g. "Nǐ hǎo ma？") exists. Some languages need them (e.g. Chinese, Thai), whereas others don't (e.g. Italian, French)
         if (componentsOfSoundFileName[3] != null) {
+            //Obtain language pronounciation of the Sound (e.g. "Nǐ hǎo ma？")
             mSoundPronounciation = componentsOfSoundFileName[3];
         }
 
 
-
+        //Log the English and language translations
         Log.i(TAG, "Sound filename English: " + mSoundNameEnglish);
         Log.i(TAG, "Sound filename Language: " + mSoundNameLanguage);
 
+        //Log the Language Pronounciations if it exists
         if (mSoundPronounciation != null) {
             Log.i(TAG, "Sound phonetics: " + mSoundPronounciation);
         }
 
-
-
-
-        //Get the RAW name of the Sound. Remove the following components: ".mp3", numeric, and the underscore ("_") between the numeric and the name
-        mSoundName = soundFilename.replace(".mp3", "").replaceAll("\\d", "").replace("_", "");
-
-
-
-
-
     }
+
 
 
 
@@ -94,10 +92,14 @@ public class Sound {
     }
 
 
+
+
     //Get the ID of the Sound
     public Integer getSoundId(){
         return mSoundId;
     }
+
+
 
 
     //Set the ID of the Sound
@@ -105,39 +107,28 @@ public class Sound {
         mSoundId = soundId;
     }
 
-    //Get the name of the Sound
-    public String getSoundName(){
-        return mSoundName;
-    }
 
 
-//    //Get the title of the Sound
-//    public String getTitle(){
-//        return mSoundTitle;
-//    }
 
-
+    //Get the English translation of the Sound
     public String getSoundNameEnglish(){
         return mSoundNameEnglish;
     }
 
 
+
+
+    //Get the Language translation of the Sound
     public String getSoundNameLanguage(){
         return mSoundNameLanguage;
     }
 
 
+
+
+    //Get the pronounciation of the Sound
     public String getSoundPronounciation(){
         return mSoundPronounciation;
     }
-
-
-
-
-
-
-
-
-
 
 }
