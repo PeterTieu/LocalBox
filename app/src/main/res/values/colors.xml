@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
+    <!--Default color scheme-->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="colorDarkBackground">#314050</color>
 
 
-
+    <!--Prinmary colors-->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
@@ -36,9 +38,8 @@
     <color name="red_vietnamese_flag">#CE1127</color>
 
 
-
-
-
-
+    <!--Speed SeekBar-->
+    <color name="ambient_dark_yellow">#a09531</color>
+    <color name="grey_dark_green">#3D453C</color>
 
 </resources>
