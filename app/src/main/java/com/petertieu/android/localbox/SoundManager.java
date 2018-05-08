@@ -2,9 +2,10 @@ package com.petertieu.android.localbox;
 
 
 //SoundManager manages ALL the Sounds in the assets resource folder. It functions to:
-    //1: Load all the Sound ASSET files into the SoundPool
+    //1: LOAD all the Sound ASSET files into the SoundPool
     //2: FETCH and RELEASE Sounds to/from the RecyclerView
     //3: PLAY a Sound from the SoundPool
+    //4: GET and SET the current speed in the Speed SeekBar
 
 //In MODEL layer of the project
 
@@ -14,15 +15,16 @@ import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.Log;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SoundManager {
 
-    //============= Declare instance variables ==============================================
-    //Log to Logcat
+    //============= DECLARE INSTANCE VARIABLES ==============================================
+
+    //Tag for Logcat
     private final String TAG = "SoundManager";
 
     //AssetManager for accessing assets
@@ -40,27 +42,22 @@ public class SoundManager {
     //SoundPool for playing the Sound asset files
     SoundPool mSoundPool;
 
-
-
-
-
     //SpeedSeekBar variables
-    public static final float MIN_PLAYBACK_SPEED = 0.7f;
-    public static final float MAX_PLAYBACK_SPEED = 1.4f;
-
-    private float mCurrentSpeedValue = 1;
-
+    public static final float MIN_PLAYBACK_SPEED = 0.6f;    //Minimum speed
+    public static final float MAX_PLAYBACK_SPEED = 1.4f;    //Maximum speed
+    private float mCurrentSpeedValue = 1;                   //Current (default) speed
 
 
 
 
-    //============= Define methods ==========================================================
 
+    //============= DEFINE METHODS ==========================================================
 
     //======== 1: LOAD Sounds to the SoundPool ================================
-
     //Build constructor
     public SoundManager(Context context){
+
+        //Initialise AssetManager
         mAssetManager = context.getAssets();
 
         //Create a SoundPool object, defining: max number of sounds played together, audio stream type, and the sample-rate converter quality (default 0)
@@ -78,25 +75,24 @@ public class SoundManager {
         //String array to store sound names
         String[] soundNames;
 
+
         //Try a 'risky' task - mAssetManager.list(String) could throw an IOException if no asset files are found in the directory
         try{
             //Get the filenames of all the Sound asset files in the parent directory (e.g. "hello", "yes")
             soundNames = mAssetManager.list(SOUNDS_FOLDER_NAME);
         }
         catch(IOException ioException){
-
             //Log to Logcat
             Log.e(TAG, "Unable to list the assets", ioException);
-
             return;
         }
+
 
         //Cycle through all the Sound asset filenames in the directory folder
         for (String fileName : soundNames){
 
-            //Try risky task - load(Sound) could throw an IOException
+            //Try risky task - load(Sound) could throw an IOException if the files could not be loaded
             try{
-
                 //Get the filepath of the asset
                 String filePath = SOUNDS_FOLDER_NAME + "/" + fileName;
 
@@ -109,9 +105,7 @@ public class SoundManager {
                 //Add the sound to the Sound ArrayList
                 mSounds.add(sound);
             }
-
             catch(IOException ioException){
-
                 //Log to Logcat
                 Log.e(TAG, "Unable to load any Sounds" + fileName, ioException);
             }
@@ -178,37 +172,30 @@ public class SoundManager {
 
 
 
+    //================================================== 4: GET and SET the current speed for the Speed SeekBar ===========================================================================
 
-
-
-    //================================================== Speed SeekBar ===========================================================================
-
-
-    //======== 4: GET current Playback Speed of the Sound ================================
+    //======== GET current Playback Speed of the Sound - called by SpeedSeekBarViewModel (VIEW-MODEL), triggered by fragment_local_box.mxl (VIEW) ================================
     public float getCurrentSpeedValue(){
         return mCurrentSpeedValue;
     }
 
 
-
-
-    //======== 4: SET current Playback Speed of the Sound ================================
+    //======== SET current Playback Speed of the Sound - called by SpeedSeekBarViewModel (VIEW-MODEL), triggered by fragment_local_box.mxl (VIEW) ================================
     public void setCurrentSpeedValue(float currentSpeedValue){
 
+        //If current speed is greater than the MAX speed
         if (currentSpeedValue > MAX_PLAYBACK_SPEED){
             mCurrentSpeedValue = MAX_PLAYBACK_SPEED;
         }
+        //If current speed is lesser than the MIN speed
         else if (currentSpeedValue < MIN_PLAYBACK_SPEED){
             mCurrentSpeedValue = MIN_PLAYBACK_SPEED;
         }
+        //Let the current speed equal to the current speed
         else{
             mCurrentSpeedValue = currentSpeedValue;
         }
     }
-
-
-
-
 
 }
 
