@@ -7,7 +7,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 
-//ABSTRACT activity that is to be subclassed by other activities
+//ABSTRACT class that is to be subclassed by other activities
+
+//In MODEL layer of the project
+
 public abstract class OneFragmentActivity extends AppCompatActivity {
 
     @Override
@@ -41,4 +44,5 @@ public abstract class OneFragmentActivity extends AppCompatActivity {
 
     //Declare the abstract method that is to be overriden in the subclass activity class
     protected abstract Fragment createFragment();
+
 }
