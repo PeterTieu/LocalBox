@@ -4,25 +4,22 @@ import android.support.v4.app.Fragment;
 
 
 //Activity hosting LanguageChooserFragment
+
+//In MODEL layer of the project
+
 public class LanguageChooserActivity extends OneFragmentActivity{
 
-    //============= Declare instance variables ==============================================
-    private static final String TAG = "LanguageChooserActivity";
-
-
     //============= Define methods ==========================================================
-    @Override
-    protected Fragment createFragment(){
-        return new LanguageChooserFragment();
-    }
-
+    //Get resource ID of the layout
     @Override
     protected int getLayoutResourceId(){
         return R.layout.activity_masterfragment;
     }
 
-
-
-
+    //Create the fragment for the activity
+    @Override
+    protected Fragment createFragment(){
+        return new LanguageChooserFragment();
+    }
 
 }
