@@ -10,23 +10,31 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import com.petertieu.android.localbox.R;
-
-import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+
+//Class that sets the AlertDialog for LanguageChooserFragment
+
+
+//In CONTROLLER layer of the project
 
 public class AboutDialogFragment extends DialogFragment{
 
 
+    //Set static method to begin AlertDialog
     public static AboutDialogFragment newInstance(){
         return new AboutDialogFragment();
     }
 
 
+    //Override onCreateDialog(..) callback method
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
 
+        //Inflate the layout of the AlertDialog
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_about, null);
+
+        //Create and customise the dialog title
         TextView dialogTitle = new TextView(getActivity());
         dialogTitle.setText("What is LocalBox?");
         dialogTitle.setTextSize(22);
@@ -35,10 +43,7 @@ public class AboutDialogFragment extends DialogFragment{
         dialogTitle.setTextColor(getResources().getColor(R.color.colorAccent));
         dialogTitle.setBackgroundColor(getResources().getColor(R.color.colorDarkBackground));
 
-
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_about, null);
-
-
+        //Create the AlertDialog
         AlertDialog alertDialog = new AlertDialog
                 .Builder(getActivity())
                 .setView(view)
@@ -66,19 +71,18 @@ public class AboutDialogFragment extends DialogFragment{
                 .show();
 
 
-
+        //If the screen orientation is PORTRAIT
         if (getActivity().getResources().getConfiguration().orientation == ORIENTATION_PORTRAIT){
-            alertDialog.getWindow().setLayout(900,1150);
+            alertDialog.getWindow().setLayout(900,1150); //Set the size of the AlertDialog as per PORTRAIT orientation
         }
+        //If the screen orientation is LANDSCAPE
         else{
-            alertDialog.getWindow().setLayout(1450, 900);
+            alertDialog.getWindow().setLayout(1450, 900); //Set the size of the AlertDialog as per LANDSCAPE orientation
         }
 
 
+        //Return the AlertDialog
         return alertDialog;
-
-
     }
-
 
 }
