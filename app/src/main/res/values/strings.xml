@@ -3,7 +3,9 @@
     <!--App Name-->
     <string name="app_name">LocalBox</string>
 
+
     <!--Language Chooser options-->
+    <string name="select_a_language">Select a Language</string>
     <string name="arabic">Arabic</string>
     <string name="chinese">Chinese</string>
     <string name="french">French</string>
@@ -19,7 +21,7 @@
 
 
     <!--Category Chooser options-->
-    <string name="choose_category">Choose the Category</string>
+    <string name="select_a_category">Select A Category</string>
     <string name="numerics">Numerics</string>
     <string name="statements">Statements</string>
     <string name="questions">Questions</string>
@@ -27,9 +29,8 @@
     <string name="nouns">Nouns</string>
 
 
-    <!--Category options-->
-    <string name="category">Category</string>
-
+    <!--Category Fragent-->
+    <string name="tap_the_speech_bubbles">Tap the Speech Bubbles</string>
 
 
     <!--Speed Seek Bar-->
@@ -41,13 +42,9 @@
     <string name="fastest_speed">Fastest Speed</string>
 
 
-
     <!--Menu Items-->
     <string name="about">About</string>
     <string name="language_info">Language Info</string>
     <string name="category_info">Category Info</string>
-
-
-
 
 </resources>
