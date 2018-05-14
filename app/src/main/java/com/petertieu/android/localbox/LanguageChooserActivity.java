@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 
 //Activity hosting LanguageChooserFragment
 
-//In MODEL layer of the project
+//In CONTROLLER layer of the project
 
 public class LanguageChooserActivity extends OneFragmentActivity{
 
