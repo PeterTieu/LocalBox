@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 //ABSTRACT class that is to be subclassed by other activities
 
-//In MODEL layer of the project
+//In CONTROLLER layer of the project
 
 public abstract class OneFragmentActivity extends AppCompatActivity {
 
