@@ -10,57 +10,70 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import com.petertieu.android.localbox.R;
-
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+
+
+//Class that sets the AlertDialog for CategoryChooserFragment
+
+//In CONTROLLER layer of the project
 
 public class LanguageInfoDialogFragment extends DialogFragment{
 
-
+    //============= Declare instance variables ==============================================
+    //Key for for language chosen
     private static final String ARG_LANGUAGE_CHOSEN = "languageChosen";
 
+    //Custom title variables
     private String mCustomTitleText;
     private int mCustomTitleTextColor;
     private int mCustomTitleBackgroundColor;
+
+    //Message variable
     private CharSequence mMessage;
 
 
+
+
+    //============= Define methods ==========================================================
+
+    //Encapsulator method - called by CategoryChooserFragment
     public static LanguageInfoDialogFragment newInstance(String languageChosen){
 
+        //Create argument-bundle
         Bundle argumentBundle = new Bundle();
 
+        //Put the Language chosen to the argument-bundle
         argumentBundle.putString(ARG_LANGUAGE_CHOSEN, languageChosen);
 
+        //Create the LanguageInfoDialogFragment object
         LanguageInfoDialogFragment languageInfoDialogFragment = new LanguageInfoDialogFragment();
 
+        //Set the argument-bundle to the LanguageInfoDialogFragment object
         languageInfoDialogFragment.setArguments(argumentBundle);
 
+        //Return LanguageInfoDialogFragment
         return languageInfoDialogFragment;
     }
 
 
 
 
+    //Override onCreateDialog(..) method
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
 
+        //Obtain the Language chosen from the argument-bundle
         String languageChosen = (String) getArguments().getString(ARG_LANGUAGE_CHOSEN);
 
 
-
-
-
-
+        //'Scan' through the possible Languages chosen, and configure the custom title and message variables to the relevant values
         switch(languageChosen){
 
             case "arabic":
-
                 mCustomTitleText = "Arabic Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.white);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.green_arabic_flag);
-
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Arabic is the 5th most commonly spoken language, with 300 million people speakers around the world. " +
@@ -79,13 +92,10 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
 
-
             case "chinese":
-
                 mCustomTitleText = "Chinese Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.yellow_chinese_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.red_chinese_flag);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "More than 1.3 billion people speak Chinese, with the majority of the Chinese speaking population concentrated " +
@@ -106,12 +116,11 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 break;
 
 
-            case "french":
 
+            case "french":
                 mCustomTitleText = "French Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.white);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.blue_french_flag);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "French is one of the world's major languages. It is the official language of 22 countries and is the co-official language of several others, " +
@@ -131,11 +140,9 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
             case "german":
-
                 mCustomTitleText = "German Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.yellow_german_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.black);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "German is the 6th most spoken language in the world, being the native language of more than 90 million speakers. " +
@@ -154,12 +161,11 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 break;
 
 
-            case "hindi":
 
+            case "hindi":
                 mCustomTitleText = "Hindi Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.orange_hindi_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.green_hindi_flag);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Hindi, amongst the many languages in India, is the official language of the country, with English as the other official language. " +
@@ -177,12 +183,11 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 break;
 
 
-            case "italian":
 
+            case "italian":
                 mCustomTitleText = "Italian Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.white);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.green_italian_flag);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Italian is the official language of Italy and San Marino. It is one of the two offical languages of the Vatican " +
@@ -201,13 +206,10 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
 
-
             case "japanese":
-
                 mCustomTitleText = "Japanese Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.red_japanese_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.white);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Japanese is the official language of Japan, which has a population of 125 million. There are also around 3 million speakers of Japanese " +
@@ -227,11 +229,9 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
             case "korean":
-
                 mCustomTitleText = "Korean Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.black);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.white);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Korean is the official and national language of South Korea and North Korea. " +
@@ -251,11 +251,9 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
             case "russian":
-
                 mCustomTitleText = "Russian Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.blue_russian_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.white);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Russian is the official language in the Russian Federation, and is spoken by over 170 million people in the world. " +
@@ -274,12 +272,11 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 break;
 
 
-            case "spanish":
 
+            case "spanish":
                 mCustomTitleText = "Spanish Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.red_spanish_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.yellow_spanish_flag);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Spanish is the native language of over 330 million people in the world. It is the official language of Spain, " +
@@ -297,8 +294,8 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 break;
 
 
-            case "thai":
 
+            case "thai":
                 mCustomTitleText = "Thai Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.blue_thai_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.red_thai_flag);
@@ -322,12 +319,11 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 break;
 
 
-            case "vietnamese":
 
+            case "vietnamese":
                 mCustomTitleText = "Vietnamese Language";
                 mCustomTitleTextColor = getResources().getColor(R.color.yellow_vietnamese_flag);
                 mCustomTitleBackgroundColor = getResources().getColor(R.color.red_vietnamese_flag);
-
                 mMessage = Html.fromHtml(
                         "<br>" + "</br>" + //New Line
                                 "Vietnamese is the official language of Vietnam, spoken by over 70 million people. " +
@@ -348,10 +344,7 @@ public class LanguageInfoDialogFragment extends DialogFragment{
 
 
 
-
-
-
-
+        //Set the custom title based on the variables configured for the chosen Language
         TextView customTitle = new TextView(getActivity());
         customTitle.setText(mCustomTitleText);
         customTitle.setTextSize(22);
@@ -361,11 +354,11 @@ public class LanguageInfoDialogFragment extends DialogFragment{
         customTitle.setBackgroundColor(mCustomTitleBackgroundColor);
 
 
+        //Obtain the View of the menu layout file
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_about, null);
 
 
-
-
+        //Create AlertDialog, based on the layout and custom title and message values
         AlertDialog alertDialog = new AlertDialog
                 .Builder(getActivity())
                 .setView(view)
@@ -374,7 +367,7 @@ public class LanguageInfoDialogFragment extends DialogFragment{
                 .show();
 
 
-
+        //Set the size of the AlertDialog based on the orientation of the screen
         if (getActivity().getResources().getConfiguration().orientation == ORIENTATION_PORTRAIT){
             alertDialog.getWindow().setLayout(850,1200);
         }
@@ -383,11 +376,8 @@ public class LanguageInfoDialogFragment extends DialogFragment{
         }
 
 
-
+        //Return the AlertDialog
         return alertDialog;
-
-
     }
-
 
 }
