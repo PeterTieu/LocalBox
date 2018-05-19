@@ -187,29 +187,29 @@ public class SoundViewModel extends BaseObservable{
 
 
         //TODO: MAKE METHODS OUT OF THE BELOW
-        if (CategoryFragment.mLanguageChosen.equals("arabic")) {
+        if (CategoryFragment.sLanguageChosen.equals("arabic")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_arabic_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_arabic_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_arabic_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_arabic_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_arabic_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -217,29 +217,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("chinese")) {
+        if (CategoryFragment.sLanguageChosen.equals("chinese")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_chinese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_chinese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_chinese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_chinese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_chinese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -248,29 +248,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("french")) {
+        if (CategoryFragment.sLanguageChosen.equals("french")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_french_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_french_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_french_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_french_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_french_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -278,29 +278,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("german")) {
+        if (CategoryFragment.sLanguageChosen.equals("german")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_german_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_german_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_german_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_german_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_german_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -310,29 +310,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("hindi")) {
+        if (CategoryFragment.sLanguageChosen.equals("hindi")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_hindi_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_hindi_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_hindi_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_hindi_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_hindi_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -342,29 +342,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("italian")) {
+        if (CategoryFragment.sLanguageChosen.equals("italian")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_italian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_italian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_italian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_italian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_italian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -373,29 +373,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("japanese")) {
+        if (CategoryFragment.sLanguageChosen.equals("japanese")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_japanese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_japanese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_japanese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_japanese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_japanese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -404,29 +404,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("korean")) {
+        if (CategoryFragment.sLanguageChosen.equals("korean")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_korean_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_korean_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_korean_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_korean_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_korean_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -437,29 +437,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("russian")) {
+        if (CategoryFragment.sLanguageChosen.equals("russian")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_russian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_russian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_russian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_russian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_russian_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -468,29 +468,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("spanish")) {
+        if (CategoryFragment.sLanguageChosen.equals("spanish")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_spanish_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_spanish_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_spanish_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_spanish_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_spanish_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -499,29 +499,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("thai")) {
+        if (CategoryFragment.sLanguageChosen.equals("thai")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_thai_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_thai_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_thai_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_thai_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_thai_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
@@ -530,29 +530,29 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-        if (CategoryFragment.mLanguageChosen.equals("vietnamese")) {
+        if (CategoryFragment.sLanguageChosen.equals("vietnamese")) {
 
-            if (CategoryFragment.mCategoryChosen.equals("numerics")) {
+            if (CategoryFragment.sCategoryChosen.equals("numerics")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_vietnamese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_numerics));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("statements")) {
+            if (CategoryFragment.sCategoryChosen.equals("statements")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_vietnamese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_statements));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("questions")) {
+            if (CategoryFragment.sCategoryChosen.equals("questions")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_vietnamese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_questions));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("adjectives")) {
+            if (CategoryFragment.sCategoryChosen.equals("adjectives")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_vietnamese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_adjectives));
             }
 
-            if (CategoryFragment.mCategoryChosen.equals("nouns")) {
+            if (CategoryFragment.sCategoryChosen.equals("nouns")) {
                 stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mContext.getResources().getDrawable(R.drawable.speech_bubble_vietnamese_flag));
                 stateListDrawable.addState(new int[]{}, mContext.getResources().getDrawable(R.drawable.speech_bubble_nouns));
             }
