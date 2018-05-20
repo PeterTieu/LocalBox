@@ -11,35 +11,46 @@ import android.widget.TextView;
     //It links the VIEW (list_item_sound.xml) with the MODEL (Sound, SoundManager).
     //Its function is to:
         //1: Get the title of the Sound asset from the Sound class (MODEL) and DISPLAY it onto the layout (VIEW)
-        //2: Answers to the android:onClick attribute from the layout (VIEW) and call the playSound(Sound) method from the SoundManager class (MODEL)
+        //2: Answer to the android:onClick attribute from the layout (VIEW) and call the playSound(Sound) method from the SoundManager class (MODEL)
 
 
-//NOTE: Extends BaseObservable class so that we could get access to the method: notifyChange()
+//NOTE: SoundViewModel extends BaseObservable class so that we could get access to the method: notifyChange()
 public class SoundViewModel extends BaseObservable{
 
     //============= Declare instance variables ==============================================
 
+    //Tag for Logcat
     private final String TAG = "SoundViewModel";
 
+    //Context reference variable
+    public Context mContext;
 
+    //Model reference variables
     private Sound mSound;
     private SoundManager mSoundManager;
 
 
+
+
     //============= Declare methods =========================================================
 
-
-
-    //Build constructor
+    //Build constructor - called by mListItemSoundBinding.setSoundViewModel(..) in CategoryFragment
     public SoundViewModel(SoundManager soundManger, Context context){
+
+        //Assign the SoundManager instance reference variable to the local variable
         mSoundManager = soundManger;
+
+        //Assign the Context instance variable to the local variable
         mContext = context;
     }
+
+
 
 
     //Set the Sound to the associated list item - called by SoundHolder.bind(Sound)
     public void setSound(Sound sound){
 
+        //Get the Sound
         mSound = sound;
 
         //FEEDBACK:
@@ -52,14 +63,10 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-
-
-
-    //Get the name of the Sound - called by "android:text="@{SoundViewModel.getSoundName}" in list_item_sound.xml
+    //Get the name of the Sound in English - called by "android:text="@{SoundViewModel.getSoundName}" in list_item_sound.xml
     public String getSoundName() {
 
-
-
+        //Get the name of the Soud in English
         return mSound.getSoundNameEnglish();
 
     }
@@ -67,65 +74,60 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-
-
-
     //Set what happens when the list item is clicked - called by "android:onClick="@{(view) -> SoundViewModel.onButtonClicked()}" in list_item_sound.xml
     public void onButtonClicked(){
-
-
 
         //Play the sound
         mSoundManager.playSound(mSound);
 
 
-        //REMOVE the PRE-TAP View on screen, and ADD the CAPTIONS View (NOTE: Only one of the PRE-TAP View or CAPTIONS View could appear on screen at a time!)
+        //======= REMOVE the PRE-TAP View on screen, and ADD the CAPTIONS View (NOTE: Only one of the PRE-TAP View or CAPTIONS View could appear on screen at a time!) ================
+
+        //Obtain the linear layout of the "parent" element, which contains the preTapView and the postTapView
         LinearLayout parentLinearLayout = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.parentLinearLayout;
+
+        //Obtain the preTapView layout
         LinearLayout preTapView = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.preTapView;
+
+        //Remove the preTapView layout
         parentLinearLayout.removeView(preTapView);
 
-
+        //Obtain the postTapView LinearLayout element
         LinearLayout captionsLinearLayout = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.postTapView;
 
-        //If the CAPTIONS View does not exist, then add it to the layout
+        //If the CAPTIONS View does NOT exist, then add it to the layout
         if (CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.postTapView) == null) {
+            //
             parentLinearLayout.addView(captionsLinearLayout, parentLinearLayout.getChildCount() - 3);
         }
 
 
-
-
-
-
-
+        //Obtain the englishText TextView element
         TextView englishText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.english_text);
+        //Set the name of the Sound in English
         englishText.setText(mSound.getSoundNameEnglish());
 
 
-
-
+        //Obtain the languageText TextView element
         TextView languageText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.language_text);
+        //Set the name of the Sound in the Language
         languageText.setText(mSound.getSoundNameLanguage());
 
 
-
+        //If the Pronunciation Text of the Sound EXISTS (e.g. for languages such as German, Spanish, Vietnamese etc.)
         if (mSound.getSoundPronounciation() != null) {
+
+            //Obtain the Pronunciation Text TextView element
             TextView pronounciationText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.pronounciation_text);
+
+            //Set the TextView element of the Pronunciation Text to the Pronunciation Text of the Sound
             pronounciationText.setText(mSound.getSoundPronounciation());
         }
 
 
 
-//        for (int i = 0; i<CategoryFragment.soundHolders.size()-1; i++){
-//            if (mSound.equals(CategoryFragment.soundHolders.get(i))){
-//                CategoryFragment.soundHolders.get(i).setTextToLanguage();
-//            }
-//        }
 
-
-
-
-        //Account for the length of the English Text. Adjust the fond size of the English Text accordingly
+        //Account for the length of the English Text. Adjust the font size of the English Text accordingly
         if(englishText.length() >= 5 && englishText.length() < 10){
             CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(40f);
         }
@@ -146,8 +148,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Account for the length of the Language Text. Adjust the font size of the Language Text accordingly
         if (languageText.length() >= 5 && languageText.length() < 10){
             CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(40f);
         }
@@ -161,14 +162,7 @@ public class SoundViewModel extends BaseObservable{
             CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(50f);
         }
 
-
     }
-
-
-
-
-
-    public Context mContext;
 
 
 
@@ -178,12 +172,6 @@ public class SoundViewModel extends BaseObservable{
         StateListDrawable stateListDrawable = new StateListDrawable();
         stateListDrawable.setExitFadeDuration(300);
         stateListDrawable.setAlpha(150);
-
-
-
-
-
-
 
 
         //TODO: MAKE METHODS OUT OF THE BELOW
@@ -559,27 +547,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         return stateListDrawable;
     }
 
-
-
-
-
-
-
 }
-
-
