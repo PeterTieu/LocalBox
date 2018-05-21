@@ -34,6 +34,8 @@ public class SoundViewModel extends BaseObservable{
 
     //============= Declare methods =========================================================
 
+    //==================== DATA-BINDING the layout (VIEW) to the SoundViewModel (VIEW-MODEL) =============================================================================================
+
     //Build constructor - called by mListItemSoundBinding.setSoundViewModel(..) in CategoryFragment
     public SoundViewModel(SoundManager soundManger, Context context){
 
@@ -46,8 +48,7 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-
-    //Set the Sound to the associated list item - called by SoundHolder.bind(Sound)
+    //Set the Sound to the associated list item - called by SoundHolder.bind(Sound) in CategoryFragment
     public void setSound(Sound sound){
 
         //Get the Sound
@@ -63,6 +64,9 @@ public class SoundViewModel extends BaseObservable{
 
 
 
+
+    //==================== LINKING the layout (VIEW) to the SoundViewModel (VIEW-MODEL) =============================================================================================
+
     //Get the name of the Sound in English - called by "android:text="@{SoundViewModel.getSoundName}" in list_item_sound.xml
     public String getSoundName() {
 
@@ -74,58 +78,67 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-    //Set what happens when the list item is clicked - called by "android:onClick="@{(view) -> SoundViewModel.onButtonClicked()}" in list_item_sound.xml
+    //Set what happens when a list item (i.e. Sound) is clicked on...
+    // ...REGARDING the parentLinearLayout
+    // called by "android:onClick="@{(view) -> SoundViewModel.onButtonClicked()}" in list_item_sound.xml
     public void onButtonClicked(){
 
         //Play the sound
         mSoundManager.playSound(mSound);
 
 
-        //======= REMOVE the PRE-TAP View on screen, and ADD the CAPTIONS View (NOTE: Only one of the PRE-TAP View or CAPTIONS View could appear on screen at a time!) ================
+
+        //======= REMOVE the PRE-TAP View on screen (NOTE: Only either one of the PRE-TAP View ...OR... POST-TAP View could appear on screen at a time!) ================
 
         //Obtain the linear layout of the "parent" element, which contains the preTapView and the postTapView
         LinearLayout parentLinearLayout = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.parentLinearLayout;
 
-        //Obtain the preTapView layout
+        //Obtain the preTapView layout - a layout that shows a text "Tap the Speech Bubbles" and a picture next to it
         LinearLayout preTapView = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.preTapView;
 
         //Remove the preTapView layout
         parentLinearLayout.removeView(preTapView);
 
-        //Obtain the postTapView LinearLayout element
-        LinearLayout captionsLinearLayout = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.postTapView;
 
-        //If the CAPTIONS View does NOT exist, then add it to the layout
+
+
+        //======= ADD the POST-TAP View on screen (NOTE: Only either one of the PRE-TAP View ...OR... POST-TAP View could appear on screen at a time!) ================
+
+        //Obtain the postTapView LinearLayout element - a layout that shows the English Text, Language Text and Pronunciation Text
+        LinearLayout postTapView = (LinearLayout) CategoryFragment.fragmentLocalboxBinding.postTapView;
+
+        //If the POST-TAP View does NOT exist, then add it to the layout
         if (CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.postTapView) == null) {
-            //
-            parentLinearLayout.addView(captionsLinearLayout, parentLinearLayout.getChildCount() - 3);
+            //Add the English Text to the parentLinearLayout View
+            parentLinearLayout.addView(postTapView, parentLinearLayout.getChildCount() - 3);
         }
 
 
-        //Obtain the englishText TextView element
+        //Obtain the English Text TextView element
         TextView englishText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.english_text);
-        //Set the name of the Sound in English
+        //Set the name of the Sound in English to the View
         englishText.setText(mSound.getSoundNameEnglish());
 
 
         //Obtain the languageText TextView element
         TextView languageText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.language_text);
-        //Set the name of the Sound in the Language
+        //Set the name of the Sound in the Language to the View
         languageText.setText(mSound.getSoundNameLanguage());
 
 
-        //If the Pronunciation Text of the Sound EXISTS (e.g. for languages such as German, Spanish, Vietnamese etc.)
+        //If the Pronunciation Text of the Sound EXISTS
+        // NOTE: This check is necessary, as the Pronunciation Text does NOT exist for languages these languages: German, Spanish, Vietnamese etc.
         if (mSound.getSoundPronounciation() != null) {
 
             //Obtain the Pronunciation Text TextView element
             TextView pronounciationText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.pronounciation_text);
-
-            //Set the TextView element of the Pronunciation Text to the Pronunciation Text of the Sound
+            //Set the Pronunciation of the Language to the View
             pronounciationText.setText(mSound.getSoundPronounciation());
         }
 
 
 
+        //======= CONFIGURE the size of the English Text and Language Text ================
 
         //Account for the length of the English Text. Adjust the font size of the English Text accordingly
         if(englishText.length() >= 5 && englishText.length() < 10){
@@ -167,14 +180,19 @@ public class SoundViewModel extends BaseObservable{
 
 
 
+
+    //Set what happens when a list item (i.e. Sound) is clicked on...
+    // ...REGARDING the list item itself
+    // called by android:background="@{SoundViewModel.makeSelector()}"in list_item_sound.xml
     public StateListDrawable makeSelector(){
 
+        //Create StateListDrawable object
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.setExitFadeDuration(300);
-        stateListDrawable.setAlpha(150);
+        stateListDrawable.setExitFadeDuration(300); //Set duration of the fade of the UNPRESSED state (aka the duration of appearance of the PRESSED state)
+        stateListDrawable.setAlpha(150); //Set the transparancy (out of 255) of the PRESSED state
 
 
-        //TODO: MAKE METHODS OUT OF THE BELOW
+        //Create State-List Drawable for: ARABIC
         if (CategoryFragment.sLanguageChosen.equals("arabic")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -204,7 +222,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
+        //Create State-List Drawable for: CHINESE
         if (CategoryFragment.sLanguageChosen.equals("chinese")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -234,8 +252,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Create State-List Drawable for: FRENCH
         if (CategoryFragment.sLanguageChosen.equals("french")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -265,7 +282,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
+        //Create State-List Drawable for: GERMAN
         if (CategoryFragment.sLanguageChosen.equals("german")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -295,9 +312,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
-
+        //Create State-List Drawable for: HINDI
         if (CategoryFragment.sLanguageChosen.equals("hindi")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -327,9 +342,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
-
+        //Create State-List Drawable for: ITALIAN
         if (CategoryFragment.sLanguageChosen.equals("italian")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -359,8 +372,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Create State-List Drawable for: JAPANESE
         if (CategoryFragment.sLanguageChosen.equals("japanese")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -390,8 +402,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Create State-List Drawable for: KOREAN
         if (CategoryFragment.sLanguageChosen.equals("korean")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -421,10 +432,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
-
-
+        //Create State-List Drawable for: RUSSIAN
         if (CategoryFragment.sLanguageChosen.equals("russian")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -454,8 +462,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Create State-List Drawable for: SPANISH
         if (CategoryFragment.sLanguageChosen.equals("spanish")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -485,8 +492,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Create State-List Drawable for: THAI
         if (CategoryFragment.sLanguageChosen.equals("thai")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -516,8 +522,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
-
-
+        //Create State-List Drawable for: VIETNAMESE
         if (CategoryFragment.sLanguageChosen.equals("vietnamese")) {
 
             if (CategoryFragment.sCategoryChosen.equals("numerics")) {
@@ -547,6 +552,7 @@ public class SoundViewModel extends BaseObservable{
         }
 
 
+        //Return the StateListDrawable object
         return stateListDrawable;
     }
 
