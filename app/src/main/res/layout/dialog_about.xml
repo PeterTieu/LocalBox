@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--Dialog fragment layout - for About-->
-    <!--Opened in the Language Chooser Activity-->
+    <!--Opened in the LanguageChooserFragment-->
 
 <android.support.v7.widget.AlertDialogLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
