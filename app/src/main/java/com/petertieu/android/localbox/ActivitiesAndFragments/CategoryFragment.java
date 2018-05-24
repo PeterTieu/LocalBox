@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ActivitiesAndFragments;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -17,9 +17,14 @@ import android.widget.LinearLayout;
 import java.util.List;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
+import com.petertieu.android.localbox.Models.Sound;
+import com.petertieu.android.localbox.Models.SoundManager;
+import com.petertieu.android.localbox.R;
+import com.petertieu.android.localbox.ViewModels.SoundViewModel;
+import com.petertieu.android.localbox.ViewModels.SpeedSeekBarViewModel;
 import com.petertieu.android.localbox.databinding.FragmentLocalBoxBinding;
 import com.petertieu.android.localbox.databinding.ListItemSoundBinding;
-import com.petertieu.android.localbox.dialogfragment.CategoryInfoDialogFragment;
+import com.petertieu.android.localbox.AlertDialogs.CategoryInfoDialogFragment;
 
 
 ///Fragment containing the Sounds of the Category of a Language - that is, the furthest fragment reachable in the app

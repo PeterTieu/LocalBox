@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ActivitiesAndFragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import com.petertieu.android.localbox.dialogfragment.AboutDialogFragment;
+import com.petertieu.android.localbox.AlertDialogs.AboutDialogFragment;
+import com.petertieu.android.localbox.R;
+
 import mehdi.sakout.fancybuttons.FancyButton;
 
 

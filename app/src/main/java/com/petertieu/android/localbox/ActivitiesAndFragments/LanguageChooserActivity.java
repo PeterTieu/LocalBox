@@ -1,6 +1,8 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ActivitiesAndFragments;
 
 import android.support.v4.app.Fragment;
+
+import com.petertieu.android.localbox.R;
 
 
 //Activity hosting LanguageChooserFragment

@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ActivitiesAndFragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.petertieu.android.localbox.R;
 
 //Activity hosting the CategoryFragment (i.e. the fragment that contains the Sound asset files of a Category of a Language)
 

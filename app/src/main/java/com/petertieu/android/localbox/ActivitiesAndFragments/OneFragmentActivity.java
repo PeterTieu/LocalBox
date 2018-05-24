@@ -1,10 +1,12 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ActivitiesAndFragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.annotation.LayoutRes;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+
+import com.petertieu.android.localbox.R;
 
 
 //ABSTRACT class that is to be subclassed by other activities
