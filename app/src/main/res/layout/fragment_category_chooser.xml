@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Layout for CategoryChooserFragment (PORTRAIT)-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,47 +12,49 @@
               android:paddingTop="@dimen/activity_vertical_margin"
               android:paddingBottom="@dimen/activity_vertical_margin"
               tools:showIn="@layout/fragment_language_chooser"
-              tools:context=".CategoryChooserActivity"
+              tools:context=".ActivitiesAndFragments.CategoryChooserActivity"
               android:orientation="vertical"
               android:background="@color/colorDarkBackground">
 
 
+    <!--Layout for fragment Title and Flag of Language chosen-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--Title-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Select a Category"
+            android:text="@string/select_a_category"
+            android:textStyle="bold"
             android:textSize="25sp"
             android:textColor="@color/white"/>
 
-
+        <!--Flag of Language chosen-->
         <ImageView
             android:id="@+id/flag_action_bar"
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"/>
-
-
     </LinearLayout>
 
 
 
 
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>
 
+
+
+
+    <!--Numerics - Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -76,11 +81,18 @@
             app:fb_textColor="#FFFFFF"/>
     </LinearLayout>
 
+
+
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>
 
+
+
+
+    <!--Statements - Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -107,11 +119,19 @@
             app:fb_textColor="#FFFFFF"/>
     </LinearLayout>
 
+
+
+
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>
 
+
+
+
+    <!--Questions Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -135,17 +155,22 @@
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/questions"
-            app:fb_textColor="#FFFFFF"
-            />
+            app:fb_textColor="#FFFFFF"/>
     </LinearLayout>
 
 
+
+
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>
 
 
+
+
+    <!--Adjectives Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -169,19 +194,22 @@
             app:fb_iconPosition="right"
             app:fb_radius="30dp"
             app:fb_text="@string/adjectives"
-            app:fb_textColor="#FFFFFF"
-            />
+            app:fb_textColor="#FFFFFF"/>
     </LinearLayout>
 
 
 
 
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>
 
 
+
+
+    <!--Nouns Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -212,7 +240,7 @@
 
 
 
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
