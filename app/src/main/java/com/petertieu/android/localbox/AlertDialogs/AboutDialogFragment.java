@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox.dialogfragment;
+package com.petertieu.android.localbox.AlertDialogs;
 
 import android.app.Dialog;
 import android.graphics.Typeface;

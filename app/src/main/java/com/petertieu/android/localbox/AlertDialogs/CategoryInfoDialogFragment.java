@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox.dialogfragment;
+package com.petertieu.android.localbox.AlertDialogs;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
@@ -201,7 +201,7 @@ public class CategoryInfoDialogFragment extends DialogFragment{
 
 
         //Obtain View of the menu layout file
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_about, null);
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_category_info, null);
 
 
         //Create AlertDialog, based on the layout and custom title and message
