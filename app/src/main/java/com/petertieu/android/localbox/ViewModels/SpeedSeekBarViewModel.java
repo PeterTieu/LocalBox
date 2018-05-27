@@ -1,9 +1,13 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ViewModels;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.petertieu.android.localbox.ActivitiesAndFragments.CategoryFragment;
+import com.petertieu.android.localbox.Models.SoundManager;
+import com.petertieu.android.localbox.R;
 
 
 //SpeedSeekBarViewModel is a VIEW-MODEL

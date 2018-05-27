@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.ViewModels;
 
 import android.content.Context;
 import android.databinding.BaseObservable;
@@ -6,13 +6,21 @@ import android.graphics.drawable.StateListDrawable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.petertieu.android.localbox.ActivitiesAndFragments.CategoryFragment;
+import com.petertieu.android.localbox.Models.Sound;
+import com.petertieu.android.localbox.Models.SoundManager;
+import com.petertieu.android.localbox.R;
 
-//SoundViewModel is the VIEW-MODEL of the project.
+
+//SoundViewModel is a VIEW-MODEL
     //It links the VIEW (list_item_sound.xml) with the MODEL (Sound, SoundManager).
     //Its function is to:
-        //1: Get the title of the Sound asset from the Sound class (MODEL) and DISPLAY it onto the layout (VIEW)
-        //2: Answer to the android:onClick attribute from the layout (VIEW) and call the playSound(Sound) method from the SoundManager class (MODEL)
+        //1: Set what happens when a list item (i.e. Sound) is clicked on...
+            //REGARDING the playing of the Sound ...AND... the parentLinearLayout of list_item_sound.xml
+        //2: Set what happens when a list item (i.e. Sound) is clicked on...
+            //REGARDING the list item itself
 
+//In the VIEW-MODEL layer of the project
 
 //NOTE: SoundViewModel extends BaseObservable class so that we could get access to the method: notifyChange()
 public class SoundViewModel extends BaseObservable{
@@ -78,12 +86,13 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-    //Set what happens when a list item (i.e. Sound) is clicked on...
-    // ...REGARDING the parentLinearLayout
+    //1: Set what happens when a list item (i.e. Sound) is clicked on...
+    // ...REGARDING the playing of the Sound ...AND... the parentLinearLayout of list_item_sound.xml
     // called by "android:onClick="@{(view) -> SoundViewModel.onButtonClicked()}" in list_item_sound.xml
     public void onButtonClicked(){
 
         //Play the sound
+            //In this case: VIEW (list_item_sound.xml) -> sends data to (asks to play Sound) to -> MODEL (SoundManager)
         mSoundManager.playSound(mSound);
 
 
@@ -128,7 +137,7 @@ public class SoundViewModel extends BaseObservable{
 
         //If the Pronunciation Text of the Sound EXISTS
         // NOTE: This check is necessary, as the Pronunciation Text does NOT exist for languages these languages: German, Spanish, Vietnamese etc.
-        if (mSound.getSoundPronounciation() != null) {
+        if (!mSound.getSoundPronounciation().equals(" ")) {
 
             //Obtain the Pronunciation Text TextView element
             TextView pronounciationText = CategoryFragment.fragmentLocalboxBinding.getRoot().findViewById(R.id.pronounciation_text);
@@ -142,7 +151,7 @@ public class SoundViewModel extends BaseObservable{
 
         //Account for the length of the English Text. Adjust the font size of the English Text accordingly
         if(englishText.length() >= 5 && englishText.length() < 10){
-            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(40f);
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(35f);
         }
         else if (englishText.length() >= 10 && englishText.length() < 15){
             CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(27f);
@@ -150,11 +159,29 @@ public class SoundViewModel extends BaseObservable{
         else if(englishText.length() >= 15 && englishText.length() < 20){
             CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(25f);
         }
-        else if(englishText.length() >= 20 && englishText.length() < 30){
-            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(20f);
+        else if (englishText.length() >= 20 && englishText.length() < 30 && CategoryFragment.sLanguageChosen.equals("russian") || CategoryFragment.sLanguageChosen.equals("vietnamese")){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(12f);
         }
-        else if(englishText.length() >= 30){
-            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(15f);
+        else if(englishText.length() >= 20 && englishText.length() < 30){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(18f);
+        }
+        else if (englishText.length() >= 30 && englishText.length() < 35 && CategoryFragment.sLanguageChosen.equals("russian") || CategoryFragment.sLanguageChosen.equals("vietnamese")){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(12f);
+        }
+        else if(englishText.length() >= 30 && englishText.length() < 35){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(16f);
+        }
+        else if (englishText.length() >= 35 && englishText.length() <45 && CategoryFragment.sLanguageChosen.equals("russian") || CategoryFragment.sLanguageChosen.equals("vietnamese")){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(10f);
+        }
+        else if(englishText.length() >= 35 && englishText.length() < 45){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(14f);
+        }
+        else if (englishText.length() >= 45 && CategoryFragment.sLanguageChosen.equals("russian") || CategoryFragment.sLanguageChosen.equals("vietnamese")){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(8f);
+        }
+        else if (englishText.length() >= 45){
+            CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(14f);
         }
         else{
             CategoryFragment.fragmentLocalboxBinding.englishText.setTextSize(50f);
@@ -163,13 +190,13 @@ public class SoundViewModel extends BaseObservable{
 
         //Account for the length of the Language Text. Adjust the font size of the Language Text accordingly
         if (languageText.length() >= 5 && languageText.length() < 10){
-            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(40f);
+            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(35f);
         }
         else if (languageText.length() >= 10 && languageText.length() < 15){
             CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(20f);
         }
         else if (languageText.length() >= 15){
-            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(15f);
+            CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(20f);
         }
         else{
             CategoryFragment.fragmentLocalboxBinding.languageText.setTextSize(50f);
@@ -181,8 +208,8 @@ public class SoundViewModel extends BaseObservable{
 
 
 
-    //Set what happens when a list item (i.e. Sound) is clicked on...
-    // ...REGARDING the list item itself
+    //2: Set what happens when a list item (i.e. Sound) is clicked on...
+    // ...REGARDING the list item
     // called by android:background="@{SoundViewModel.makeSelector()}"in list_item_sound.xml
     public StateListDrawable makeSelector(){
 
