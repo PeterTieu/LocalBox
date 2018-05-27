@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.Models;
 
 
 //Sound obtains the FILENAME of a single Sound asset file, and gets/sets its ID
@@ -6,10 +6,7 @@ package com.petertieu.android.localbox;
 
 //In MODEL layer of the project
 
-import android.media.MediaMetadataRetriever;
 import android.util.Log;
-
-import java.io.IOException;
 
 public class Sound {
 

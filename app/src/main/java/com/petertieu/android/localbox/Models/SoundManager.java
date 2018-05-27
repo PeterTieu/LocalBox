@@ -1,4 +1,4 @@
-package com.petertieu.android.localbox;
+package com.petertieu.android.localbox.Models;
 
 
 //SoundManager manages ALL the Sounds in the assets resource folder. It functions to:
@@ -15,6 +15,7 @@ import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.Log;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
