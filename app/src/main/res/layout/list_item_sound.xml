@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--Layout for each list item (i.e. Sound button)-->
+
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
 
+    <!--Declare the View-Model (SoundViewModel) reference variable for the View (list_item_sound.xml)-->
+    <!--NOTE: SoundViewModel is instantiated via DATA-BINDING in CategoryFragment-->
     <data>
-
         <variable
             name="SoundViewModel"
-            type="com.petertieu.android.localbox.SoundViewModel"/>
-
+            type="com.petertieu.android.localbox.ViewModels.SoundViewModel"/>
     </data>
 
 
-
-
-
+    <!--Layout of the Sound list item-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,19 +27,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{SoundViewModel.getSoundName}"
+            android:textSize="12sp"
             android:onClick="@{(view) -> SoundViewModel.onButtonClicked()}"
             android:background="@{SoundViewModel.makeSelector()}"
-            tools:text="Sound name"
-/>
-
-
-
-
-
+            tools:text="Sound name"/>
     </FrameLayout>
-
-
-
-
 
 </layout>
