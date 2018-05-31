@@ -3,33 +3,32 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+
+        <item name="colorPrimary">@color/colorPrimaryCustom</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkCustom</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-
-
-
+        <!--Include the LocalBoxButton style, which makes modifications to RecyclerView list items.-->
+        <!--NOTE: RecyclerView list items inherit attributes from the Widget.AppCompat.Button style-->
+        <!--NOTE: LocalBoxButton style overrides attributes (e.g. android:background, android:textStyle, etc.) from the Widget.AppCompat.Button style-->
         <item name="buttonStyle">@style/LocalBoxButton</item>
     </style>
 
 
-
-
-
-
-
-
+    <!--Create a style (LocalBoxButton), which inherits from the Widget.AppCompat.Button style, and overrides a couple of attributes from it-->
     <style name="LocalBoxButton" parent="Widget.AppCompat.Button">
-
         <item name="android:background">@drawable/speech_bubble</item>
-
         <item name="android:textStyle">bold</item>
-
-
     </style>
 
 
-
+    <!--Define the style for the TextView above the SeekBar - called by elements of fragment_local_box.xml-->
+    <style name="TextViewOfSeekBar">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/ambient_dark_yellow</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
