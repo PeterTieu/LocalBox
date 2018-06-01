@@ -131,7 +131,7 @@
 
 
 
-    <!--Questions Button-->
+    <!--Questions - Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -170,7 +170,7 @@
 
 
 
-    <!--Adjectives Button-->
+    <!--Adjectives - Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -209,7 +209,7 @@
 
 
 
-    <!--Nouns Button-->
+    <!--Nouns - Button-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
