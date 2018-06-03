@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.petertieu.android.localbox">
 
+    <!--Configure application attributes-->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_localbox_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_localbox_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
+        <!--Declare LanguageChooserActivity-->
         <activity
-            android:name=".LanguageChooserActivity">
+            android:name=".ActivitiesAndFragments.LanguageChooserActivity">
 
+            <!--Set LanguageChooserActivity to be the main activity, and be available on the launcher menu-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-
+        <!--Declare CategoryChooserActivity-->
         <activity
-            android:name=".CategoryChooserActivity"
-            android:label="@string/choose_category"
-            android:parentActivityName=".LanguageChooserActivity">
+            android:name=".ActivitiesAndFragments.CategoryChooserActivity"
+            android:parentActivityName=".ActivitiesAndFragments.LanguageChooserActivity">
         </activity>
 
-
+        <!--Declare CategoryActivity-->
         <activity
-            android:name=".CategoryActivity"
-            android:parentActivityName=".CategoryChooserActivity"
+            android:name=".ActivitiesAndFragments.CategoryActivity"
+            android:parentActivityName=".ActivitiesAndFragments.CategoryChooserActivity"
             android:launchMode="singleInstance">
             <!--android:launchMode="singleInstance" is necessary.
                 When the Up-Navigation button is pressed while in CategoryFragment (in order to go back to CategoryActivity),
-                the mLanguageChosen variable in CategoryActivity would be LOST!
-                (NOTE: However, this doe snot happen when the back button is pressed).
-                Therefore, we add  -android:launchMode="singleInstance"-  so that the mLanguageChosen variable would be retained
+                the sLanguageChosen variable in CategoryActivity would be LOST!
+                (NOTE: However, this does not happen when the back button is pressed).
+                Therefore, we add  -android:launchMode="singleInstance"-  so that the sLanguageChosen variable would be retained
                 even after the Up-Navigatio button is pressed!-->
         </activity>
-
 
     </application>
 
