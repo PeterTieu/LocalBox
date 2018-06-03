@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--<ScrollView-->
-<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:tools="http://schemas.android.com/tools"-->
-<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-
-
-<!--android:layout_height="match_parent"-->
-<!--android:layout_width="match_parent"-->
-<!--android:orientation="vertical">-->
-
-
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:fillViewport="false">-->
-
-<!--<TableLayout-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:stretchColumns="0">-->
-
+<!--Layout for LanguageChooserFragment (portrait)-->
 
 <LinearLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -35,26 +14,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".LanguageChooserActivity"
+    tools:context=".ActivitiesAndFragments.LanguageChooserActivity"
     tools:showIn="@layout/fragment_language_chooser">
 
 
+
+    <!--Select Language - Text-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Select a Language"
+        android:text="@string/select_a_language"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="25sp"/>
+        android:textSize="32sp"/>
 
 
 
-
-
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -62,16 +39,14 @@
 
 
 
-
-
-
+    <!--1st Row-->
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-
+        <!--Arabic - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/arabic"
             android:layout_width="0dp"
@@ -90,14 +65,15 @@
             app:fb_iconResource="@drawable/arabic_flag"
             app:fb_radius="30dp"
             app:fb_text="@string/arabic"
+            app:fb_textSize="12sp"
             app:fb_textColor="#FFFFFF"/>
 
-
+        <!--Spacer-->
         <View
             android:layout_width="25dp"
             android:layout_height="0dp"/>
 
-
+        <!--Chinese - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/chinese"
             android:layout_width="0dp"
@@ -115,97 +91,11 @@
             app:fb_iconResource="@drawable/chinese_flag"
             app:fb_radius="30dp"
             app:fb_text="@string/chinese"/>
-
-
     </LinearLayout>
 
 
 
-
-
-
-
-
-    <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="1"/>-->
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="2"-->
-        <!--android:gravity="center"-->
-        <!--android:weightSum="2">-->
-
-        <!--<mehdi.sakout.fancybuttons.FancyButton-->
-            <!--android:id="@+id/german"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:paddingBottom="10dp"-->
-            <!--android:paddingLeft="20dp"-->
-            <!--android:paddingRight="20dp"-->
-            <!--android:paddingTop="10dp"-->
-            <!--app:fb_borderColor="@color/colorPrimaryDark"-->
-            <!--app:fb_borderWidth="1dp"-->
-            <!--app:fb_defaultColor="@color/colorPrimary"-->
-            <!--app:fb_focusColor="@color/colorPrimaryDark"-->
-            <!--app:fb_iconPosition="right"-->
-            <!--app:fb_iconResource="@drawable/german_flag"-->
-            <!--app:fb_radius="30dp"-->
-            <!--app:fb_text="@string/german"-->
-            <!--app:fb_textColor="#FFFFFF"/>-->
-    <!--</LinearLayout>-->
-
-
-
-    <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="1"/>-->
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="2"-->
-        <!--android:gravity="center"-->
-        <!--android:weightSum="2">-->
-
-        <!--<mehdi.sakout.fancybuttons.FancyButton-->
-            <!--android:id="@+id/hindi"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:paddingBottom="10dp"-->
-            <!--android:paddingLeft="20dp"-->
-            <!--android:paddingRight="20dp"-->
-            <!--android:paddingTop="10dp"-->
-            <!--app:fb_borderColor="@color/colorPrimaryDark"-->
-            <!--app:fb_borderWidth="1dp"-->
-            <!--app:fb_defaultColor="@color/colorPrimary"-->
-            <!--app:fb_focusColor="@color/colorPrimaryDark"-->
-            <!--app:fb_iconPaddingLeft="18dp"-->
-            <!--app:fb_iconPosition="right"-->
-            <!--app:fb_iconResource="@drawable/hindi_flag"-->
-            <!--app:fb_radius="30dp"-->
-            <!--app:fb_text="@string/hindi"-->
-            <!--app:fb_textColor="#FFFFFF"/>-->
-    <!--</LinearLayout>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -213,21 +103,14 @@
 
 
 
-
-
-
-
-
-
+    <!--2nd Row-->
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-
-
-
+        <!--French - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/french"
             android:layout_width="0dp"
@@ -247,15 +130,12 @@
             app:fb_text="@string/french"
             app:fb_textColor="#FFFFFF"/>
 
-
-
-
+        <!--Spacer-->
         <View
             android:layout_width="25dp"
             android:layout_height="0dp"/>
 
-
-
+        <!--German - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/german"
             android:layout_width="0dp"
@@ -273,21 +153,13 @@
             app:fb_iconResource="@drawable/german_flag"
             app:fb_radius="30dp"
             app:fb_text="@string/german"
+            app:fb_textSize="12dp"
             app:fb_textColor="#FFFFFF"/>
-
-
-
     </LinearLayout>
 
 
 
-
-
-
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -295,15 +167,14 @@
 
 
 
-
-
+    <!--3rd Row-->
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-
+        <!--Hindi - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/hindi"
             android:layout_width="0dp"
@@ -324,15 +195,12 @@
             app:fb_text="@string/hindi"
             app:fb_textColor="#FFFFFF"/>
 
-
-
-
+        <!--Spacer-->
         <View
             android:layout_width="25dp"
             android:layout_height="0dp"/>
 
-
-
+        <!--Italian - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/italian"
             android:layout_width="0dp"
@@ -350,101 +218,29 @@
             app:fb_iconResource="@drawable/italian_flag"
             app:fb_radius="30dp"
             app:fb_text="@string/italian"
+            app:fb_textSize="15dp"
             app:fb_textColor="#FFFFFF"/>
 
     </LinearLayout>
 
 
 
-
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"/>
 
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="2"-->
-        <!--android:gravity="center"-->
-        <!--android:weightSum="2">-->
 
-        <!--<mehdi.sakout.fancybuttons.FancyButton-->
-            <!--android:id="@+id/russian"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:paddingBottom="10dp"-->
-            <!--android:paddingLeft="20dp"-->
-            <!--android:paddingRight="20dp"-->
-            <!--android:paddingTop="10dp"-->
-            <!--app:fb_borderColor="@color/colorPrimaryDark"-->
-            <!--app:fb_borderWidth="1dp"-->
-            <!--app:fb_defaultColor="@color/colorPrimary"-->
-            <!--app:fb_focusColor="@color/colorPrimaryDark"-->
-            <!--app:fb_iconPosition="right"-->
-            <!--app:fb_iconResource="@drawable/russian_flag"-->
-            <!--app:fb_radius="30dp"-->
-            <!--app:fb_text="@string/russian"-->
-            <!--app:fb_textColor="#FFFFFF"/>-->
-    <!--</LinearLayout>-->
-
-
-    <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="1"/>-->
-
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="2"-->
-        <!--android:gravity="center"-->
-        <!--android:weightSum="2">-->
-
-        <!--<mehdi.sakout.fancybuttons.FancyButton-->
-            <!--android:id="@+id/spanish"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:paddingBottom="10dp"-->
-            <!--android:paddingLeft="20dp"-->
-            <!--android:paddingRight="20dp"-->
-            <!--android:paddingTop="10dp"-->
-            <!--app:fb_borderColor="@color/colorPrimaryDark"-->
-            <!--app:fb_borderWidth="1dp"-->
-            <!--app:fb_defaultColor="@color/colorPrimary"-->
-            <!--app:fb_focusColor="@color/colorPrimaryDark"-->
-            <!--app:fb_iconPosition="right"-->
-            <!--app:fb_iconResource="@drawable/spanish_flag"-->
-            <!--app:fb_radius="30dp"-->
-            <!--app:fb_text="@string/spanish"-->
-            <!--app:fb_textColor="#FFFFFF"/>-->
-    <!--</LinearLayout>-->
-
-
-
-
-
-
-
-
-
-
-
+    <!--4th Row-->
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-
+        <!--Japanese - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/japanese"
             android:layout_width="0dp"
@@ -458,22 +254,20 @@
             app:fb_borderWidth="1dp"
             app:fb_defaultColor="@color/colorPrimary"
             app:fb_focusColor="@color/colorPrimaryDark"
-            app:fb_iconPaddingLeft="18dp"
+
             app:fb_iconPosition="right"
             app:fb_iconResource="@drawable/japanese_flag"
             app:fb_radius="30dp"
             app:fb_text="@string/japanese"
+            app:fb_textSize="13sp"
             app:fb_textColor="#FFFFFF"/>
 
-
-
-
+        <!--Spacer-->
         <View
             android:layout_width="25dp"
             android:layout_height="0dp"/>
 
-
-
+        <!--Korean - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/korean"
             android:layout_width="0dp"
@@ -492,17 +286,11 @@
             app:fb_radius="30dp"
             app:fb_text="@string/korean"
             app:fb_textColor="#FFFFFF"/>
-
     </LinearLayout>
 
 
 
-
-
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -510,22 +298,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+    <!--5th Row-->
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
+        <!--Russian - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/russian"
             android:layout_width="0dp"
@@ -545,18 +325,13 @@
             app:fb_text="@string/russian"
             app:fb_textColor="#FFFFFF"/>
 
+        <!--Spacer-->
+        <View
+            android:layout_width="25dp"
+            android:layout_height="0dp"/>
 
-
-
-    <View
-        android:layout_width="25dp"
-        android:layout_height="0dp"/>
-
-
-
-
-
-    <mehdi.sakout.fancybuttons.FancyButton
+        <!--Spanish - Button-->
+        <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/spanish"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -578,14 +353,7 @@
 
 
 
-
-
-
-
-
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -593,20 +361,14 @@
 
 
 
-
-
-
-
-
-
-
-
+    <!--6th Row-->
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
+        <!--Thai - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/thai"
             android:layout_width="0dp"
@@ -627,14 +389,12 @@
             app:fb_text="@string/thai"
             app:fb_textColor="#FFFFFF"/>
 
+        <!--Spacer-->
+        <View
+            android:layout_width="25dp"
+            android:layout_height="0dp"/>
 
-    <View
-        android:layout_width="25dp"
-        android:layout_height="0dp"/>
-
-
-
-
+        <!--Vietnamese - Button-->
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/vietnamese"
             android:layout_width="0dp"
@@ -659,9 +419,7 @@
 
 
 
-
-
-
+    <!--Spacer-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
